@@ -1,0 +1,1250 @@
+{
+    "data": [
+        {
+            "articleId": 1440,
+            "articleName": "Train Scheduling System Requirements",
+            "createdDate": "2024-12-10T10:56:52.079Z",
+            "category_id": 7,
+            "sub_category_id": 16,
+            "tech_id": null,
+            "is_approved": 1,
+            "category_name": "END TO END USECASES",
+            "sub_category_name": "END TO END USECASE",
+            "tech_name": null,
+            "video_url": "https://genaiexperiencestorage.blob.core.windows.net/prompt-lib/Train%20Scheduler%20v2.1.mp4?sv=2024-08-04&st=2025-02-27T13%3A56%3A10Z&se=2025-08-26T13%3A56%3A10Z&sr=b&sp=r&sig=93wcn5f7ZzMS8Z7VkVcMwpeb5MiXqFcl5LgkSrhDPf4%3D",
+            "video_id": 1407,
+            "image_url": null,
+            "image_id": null,
+            "document_url": null,
+            "document_id": null,
+            "is_private": false,
+            "repository_name": null,
+            "instruction": null,
+            "prompts": [
+                {
+                    "PromptId": 106,
+                    "Prompt": "Create the requirement document for following use case: The Train Scheduling system is a software application designed to manage and organize train schedules efficiently. It enables users to add new trains to the schedule, update arrival and departure times for existing trains, and delete trains from the system based on their unique train numbers. This system streamlines the management of train operations, enhancing punctuality and ensuring accurate schedule information for passengers and staff has context menu",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 156
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Train Scheduling System Requirements\\n00\\n# Introduction\\nThe Train Scheduling System is a software application designed to manage and orga\\nFunctional Requirements\\nThe system shall allow users to add new trains to the schedule.\\nThe system shall allow users to update arrival and departure times for existing The system shall allow users to delete trains from the system based on their un\\nThe system shall display the train schedule in a clear and organized manner.\\nThe system shall allow users to search for specific trains in the schedule. The system shall allow users to view detailed information about each train, ine\\n** Non-Functional Requirements\\nI\\nThe system shall be user-friendly and easy to navigate.\\nThe system shall be reliable and available 24/7.\\nThe system shall be secure and protect user data.\\nThe system shall be scalable to accommodate future growth and expansion.\\nThe system shall be compatible with different devices and browsers.\\n#Assumptions and Constraints The system assumes that all train information entered by users is accurate and\\nThe system is constrained by the availability and accuracy of external data source\\n##Functional Requirements\\nThe system shall allow users to add new trains to the schedule.\\nThe system shall allow users to update arrival and departure times for existing tra\\nThe system shall allow users to delete trains from the system based on their unique\\nThe system shall display the train schedule in a clear and organized manner.\\nThe system shall allow users to search for specific trains in the schedule.\\nThe system shall allow users to view detailed information about each train, includi\\n##Non-Functional Requirements\\nThe system shall be user-friendly and easy to navigate.\\nThe system shall be reliable and available 24/7.\\nThe system shall be secure and protect user data.\\nThe system shall be scalable to accommodate future growth and expansion.\\nThe system shall be compatible with different devices and browsers.\\n#Assumptions and Constraints\\nThe system assumes that all train information entered by users is accurate and up-t\\nThe system is constrained by the availability and accuracy of external data sources\\nThe system is constrained by the hardware and software limitations of the devices a\\n## Acceptance Criteria\\nThe system must allow users to add, update, and delete trains from the schedule.\\nThe system must display the train schedule in a clear and organized manner.\\nThe system must allow users to search for specific trains in the schedule.\\nThe system must allow users to view detailed information about each train, includin\\nThe system must be user-friendly and easy to navigate.\\nThe system must be reliable and available 24/7.\\nThe system must be secure and protect user data.\\nThe system must be scalable to accommodate future growth and expansion.\\nThe system must be compatible with different devices and browsers.\"",
+                            "id": 184
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 107,
+                    "Prompt": "Generate database design for 3 tables connecting each other",
+                    "PromptType": "text",
+                    "lang": "sql",
+                    "PromptDesc": [
+                        {
+                            "desc": "Here's a suggestion for a database design with 3 tables that are connected to each other:\nCREATE TABLE train (\nid INT PRIMARY KEY, name VARCHAR(255) NOT NULL, departure_time TIME NOT NULL, arrival time TIME NOT NULL );\nCREATE TABLE passenger ( id INT PRIMARY KEY, name VARCHAR(255) NOT NULL, age INT NOT NULL, gender VARCHAR(10) NOT NULL );\nCREATE TABLE ticket (\nid INT PRIMARY KEY, train id INT NOT NULL, passenger_id INT NOT NULL, seat_number INT NOT NULL, FOREIGN KEY (train_id) REFERENCES train(id), FOREIGN KEY (passenger_id) REFERENCES passenger(id) );\n",
+                            "id": 157
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Here's a suggestion for a database design with 3 tables that are connected to each other:\\nCREATE TABLE train (\\nid INT PRIMARY KEY, name VARCHAR(255) NOT NULL, departure_time TIME NOT NULL, arrival time TIME NOT NULL );\\nCREATE TABLE passenger ( id INT PRIMARY KEY, name VARCHAR(255) NOT NULL, age INT NOT NULL, gender VARCHAR(10) NOT NULL );\\nCREATE TABLE ticket (\\nid INT PRIMARY KEY, train id INT NOT NULL, passenger_id INT NOT NULL, seat_number INT NOT NULL, FOREIGN KEY (train_id) REFERENCES train(id), FOREIGN KEY (passenger_id) REFERENCES passenger(id) );\\n\"",
+                            "id": 185
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 108,
+                    "Prompt": "Apply logging frame work in selected code\n\nGetMapping(\"/findById\")\npublic ResponseEntity<?> getTrainById(@RequestParam int trainid) {\nif (tr.findById(trainId).isPresent()) {\ntry {\nreturn ResponseEntity.ok(ms.getTrainById(trainId));\n} catch (Exception e) {\ne.printStackTrace();\nreturn Responseëntity.ok(body: \"No Train to be found\");\n}",
+                    "PromptType": "Code",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " Sure, here's an example of how you can add logging to the selected code:\n",
+                            "id": 158
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import org.slf4j.Logger;\\n\\nimport org.slf4j.LoggerFactory;\\n\\n@RestController\\n\\npublic class MyController\\n\\nprivate static final Logger logger=LoggerFactory.getLogger (MyController.class);\\n\\nLogger\\n\\n@Autowired\\n\\nprivate TrainRepository tr;\\n\\n@Autowired\\n\\nprivate TrainService ms;\\n\\n@GetMapping(\\\"/train/{trainId}\\\")\\n\\npublic ResponseEntity<?> getTrainById(@Path logger.info(\\\"Getting train with ID: {}\\n\\nif (tr.findById(trainId).isPresent()) \\n}\\ntry {\\nUse the built-i\\nlogger.info(\\\"Found train with ID: \\\"+trainId);\\nUse the b\\nreturn ResponseEntity.ok(ms.getTrainById(trainId));\\n} catch (Exception e) {\\nlogger.warning(msg: \\\"Error while getting train with ID: {}\\\"\\nreturn ResponseEntity.ok(body: \\\"No Train to be found\\\");\\n}\\n \"",
+                            "id": 186
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 109,
+                    "Prompt": "Apply exception handling in following selected code",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 159
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.Train.TrainTime.Service;\\n\\nimport com.Train.TrainTime.Exception.TrainNotFoundException;\\nimport com.Train.TrainTime.Model.Intermediate;\\nimport com.Train.TrainTime.Model.Time;\\nimport com.Train.TrainTime.Model.Train;\\nimport com.Train.TrainTime.Model.UpdateTime;\\nimport com.Train.TrainTime.Repository.IntermediateRepo;\\nimport com.Train.TrainTime.Repository.TimeRepo;\\nimport com.Train.TrainTime.Repository.TrainRepo;\\nimport org.springframework.beans.factory.annotation.Autowired;\\nimport org.springframework.stereotype.Service;\\n\\nimport java.time.LocalTime;\\nimport java.time.format.DateTimeFormatter;\\nimport java.util.HashMap;\\nimport java.util.List;\\nimport java.util.Map;\\nimport java.util.Optional;\\n\\n@Service\\npublic class MyService {\\n\\n    @Autowired\\n    private TrainRepo tr;\\n\\n    @Autowired\\n    private TimeRepo tir;\\n\\n\\n    @Autowired\\n    private IntermediateRepo Ir;\\n\\n    public void addTrain(Train t){\\n        try{\\n        tr.save(t);\\n        for (Map<String, String> stationRequest : t.getIntermediate()){\\n            Time time=new Time();\\n            time.setStationId(stationRequest.get(\\\"stationId\\\"));\\n            time.setArrivalTime(stationRequest.get(\\\"arrivalTime\\\"));\\n            time.setDepartureTime(stationRequest.get(\\\"departureTime\\\"));\\n\\n            tir.save(time);\\n\\n            Intermediate intermediate=new Intermediate();\\n            intermediate.setTrainId(t.getTrainId());\\n            intermediate.setStations(t.getIntermediate());\\n            intermediate.setStationId(stationRequest.get(\\\"stationId\\\"));\\n\\n            Ir.save(intermediate);\\n\\n\\n\\n        }}catch (Exception e){\\n            e.printStackTrace();\\n        }\\n    }\\n\\n    public List<Train> getTrain(){\\n        return tr.findAll();\\n    }\\n\\n\\n    public String updateIntermediate(UpdateTime updateTime) throws TrainNotFoundException {\\n        Train train = tr.findById(updateTime.getTrainId()).orElseThrow(() -> new TrainNotFoundException(\\\"Train not found\\\"));\\n        System.out.println(train);\\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\\\"HH:mm\\\");\\n        Intermediate intermediate=new Intermediate();\\n        Time time=new Time();\\n        // Parse the lateTime string into hours and minutes\\n        String lateTimeParts[] = updateTime.getLateTime().split(\\\":\\\");\\n        int lateHours = Integer.parseInt(lateTimeParts[0]);\\n        int lateMinutes = Integer.parseInt(lateTimeParts[1]);\\n\\n        LocalTime newDepartureTime = LocalTime.parse(train.getDepartureStationTime(),formatter)\\n                .plusHours(lateHours)\\n                .plusMinutes(lateMinutes);\\n\\n        LocalTime newArrivalTime = LocalTime.parse(train.getArrivalStationTime(),formatter)\\n                .plusHours(lateHours)\\n                .plusMinutes(lateMinutes);\\n        List<Map<String, String>> intermediateStations = train.getIntermediate();\\n        for (Map<String, String> station : intermediateStations) {\\n//            String msg1=station.get(\\\"arrivalTime\\\");\\n//            System.out.println(msg1);\\n            LocalTime newStationArrivalTime = LocalTime.parse(station.get(\\\"arrivalTime\\\"),formatter)\\n                    .plusHours(lateHours)\\n                    .plusMinutes(lateMinutes);\\n//            String msg2=station.get(\\\"departureTime\\\");\\n//            System.out.println(msg2);\\n\\n            LocalTime newStationDepartureTime = LocalTime.parse(station.get(\\\"departureTime\\\"),formatter)\\n                    .plusHours(lateHours)\\n                    .plusMinutes(lateMinutes);\\n\\n            // Convert LocalTime to String if needed\\n            String newStationArrivalTimeString = newStationArrivalTime.toString();\\n            String newStationDepartureTimeString = newStationDepartureTime.toString();\\n\\n            // Set the updated times back to the IntermediateStation\\n            station.put(\\\"arrivalTime\\\", newStationArrivalTimeString);\\n            station.put(\\\"departureTime\\\", newStationDepartureTimeString);\\n\\n        }\\n\\n        // Convert LocalTime to String for train departure and arrival times if needed\\n        String newDepartureTimeString = newDepartureTime.toString();\\n        String newArrivalTimeString = newArrivalTime.toString();\\n\\n        // Update the train entity with the new times\\n        train.setDepartureStationTime(newDepartureTimeString);\\n        train.setArrivalStationTime(newArrivalTimeString);\\n        intermediate.setStations(train.getIntermediate());\\n        //time.setArrivalTime();\\n\\n        tr.save(train);\\n        return \\\"Details updated Successfully\\\";\\n\\n    }\\n\\n//    public Optional<Intermediate> getIntermediates(int trainId){\\n//        Optional<Intermediate> intermediate = Ir.findByTrainId(trainId);\\n//        return intermediate;\\n//    }\\n//    public Optional<Time> getTime(String stationId){\\n//        Optional<Time> time = tir.findById(stationId);\\n//        return time;\\n//    }\\n\\n\\n}\"",
+                            "id": 187
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 110,
+                    "Prompt": "Provide me the angular code to create one card on the screen in that there is 3 options of Add Train, Add Delay and Fetch train. the options are cubical box, provide the routing also for all 3 options. Give the name as Home for Component. ",
+                    "PromptType": "text",
+                    "lang": "javascript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 160
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { Component } from '@angular/core';\\n\\n@Component({\\n  selector: 'app-home',\\n  templateUrl: './home.component.html',\\n  styleUrls: ['./home.component.css']\\n})\\nexport class HomeComponent {\\n\\n}\\nimport { NgModule } from '@angular/core';\\nimport { BrowserModule } from '@angular/platform-browser';\\n\\nimport { AppRoutingModule } from './app-routing.module';\\nimport { AppComponent } from './app.component';\\nimport { AdminComponent } from './component/admin/admin.component';\\nimport { TrainDetailsComponent } from './component/train-details/train-details.component';\\nimport { FormsModule } from '@angular/forms';\\nimport { HomeComponent } from './component/home/home.component';\\nimport { HttpClientModule } from '@angular/common/http';\\nimport { AddTrainComponent } from './component/add-train/add-train.component';\\n\\n\\n@NgModule({\\n  declarations: [\\n    AppComponent,\\n    AdminComponent,\\n    TrainDetailsComponent,\\n    HomeComponent,\\n    AddTrainComponent\\n  ],\\n  imports: [\\n    BrowserModule,\\n    AppRoutingModule,\\n    FormsModule,\\n    HttpClientModule\\n  ],\\n  providers: [],\\n  bootstrap: [AppComponent]\\n})\\nexport class AppModule { }\"",
+                            "id": 188
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 111,
+                    "Prompt": "Now provide the code for Admin Component in that make one Cubical Card in the center and in that card Give the Heading as \"Add Delay\" and below that take 2 inputs one is Train Number and Other is Time both inputs is in string format and place one submit button there.",
+                    "PromptType": "text",
+                    "lang": "javascript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 161
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { HttpClient } from '@angular/common/http';\\nimport { Component } from '@angular/core';\\n\\n\\n@Component({\\n  selector: 'app-admin',\\n  templateUrl: './admin.component.html',\\n  styleUrls: ['./admin.component.css']\\n})\\nexport class AdminComponent {\\n  constructor(private http:HttpClient){}\\n  trainData: any = {\\n    trainId:'',\\n    lateTime: ''\\n  };\\ntrainNumber: any;\\ndelaytime: any;\\nproceed() {\\n  this.http.put('http://localhost:8080/updateTime',this.trainData).subscribe(\\n    (response) => {\\n  },\\n  (error) => {\\n    console.error('Error:', error);\\n  }\\n);\\nconsole.log('Data updated successfully.');\\nalert(\\\"Train updated successfully\\\")\\n}\\n\\n}\"",
+                            "id": 189
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 112,
+                    "Prompt": "7.\tNow provide the code for TrainDetails Component. In that set the heading as \"Fetch Train Details\" below that take only one input Train Number and below that place the submit button. after clicking the button it is expected to show the train details, train details are in the format availableTrainDetails: any[] = [ { trainld: \"123\", trainName: \"Bharat Express\", departureStation: \"LKO\", departureStationTime: \"12:30\", arrivalStation: \"Mumbai\", arrival StationTime: \"1:20\", intermediate: [ { stationld: \"121\", stationName: \"Lucknow\", arrivalTime: \"10:00\", departure Time: \"10:10\" }, { stationld: \"124\", stationName: \"Kolkata\", arrival Time: \n\"12:00\", departure Time: \"12:10\" } ] }, // Add more train details here \n1: \nmake provision to show details like these after clicking the button.\n",
+                    "PromptType": "Code",
+                    "lang": "javascript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 162
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { HttpClient } from '@angular/common/http';\\nimport { Component } from '@angular/core';\\n\\n@Component({\\n  selector: 'app-train-details',\\n  templateUrl: './train-details.component.html',\\n  styleUrls: ['./train-details.component.css']\\n})\\nexport class TrainDetailsComponent {\\n\\n  flag : boolean = false;\\n  constructor(private http: HttpClient) { }\\n  \\n  \\n    searchTrainId: string='';\\n    trainDetails: any = null;\\n  \\n    // Replace this with actual data or an array of available train details\\n    availableTrainDetails: any[] = [\\n      {\\n        trainId: \\\"\\\",\\n        trainName: \\\"\\\",\\n        departureStation: \\\"\\\",\\n        departureStationTime: \\\"\\\",\\n        arrivalStation: \\\"\\\",\\n        arrivalStationTime: \\\"\\\",\\n        intermediate: [\\n          {\\n            stationId: \\\"\\\",\\n            stationName: \\\"\\\",\\n            arrivalTime: \\\"\\\",\\n            departureTime: \\\"\\\"\\n          },\\n          {\\n            stationId: \\\"\\\",\\n            stationName: \\\"\\\",\\n            arrivalTime: \\\"\\\",\\n            departureTime: \\\"\\\"\\n          }\\n        ]\\n      },\\n      // Add more train details here\\n    ];\\n  \\n    searchTrain() {\\n      this.flag = true;\\n      // const foundTrain = this.availableTrainDetails.find(\\n      //   (train) => train.trainId === this.searchTrainId\\n      // );\\n  \\n      // if (foundTrain) {\\n      //   this.trainDetails = foundTrain;\\n      // } else {\\n      //   this.trainDetails = null;\\n      //   alert('Train not found. Please enter a valid Train ID.');\\n      // }\\n\\n      this.http.get(`http://localhost:8080/findById?trainId=${this.searchTrainId}`).\\n      subscribe((response:any)=>\\n        {\\n          this.trainDetails=response;\\n           console.log(this.trainDetails);\\n           //alert(\\\"Data deleted successfully\\\");\\n    \\n         });\\n\\n      \\n    }\\n\\n}\"",
+                            "id": 190
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 113,
+                    "Prompt": "Now provide the angular code to AddTrain Component in this component it is expected to take the train train details as the input, Train details are in this format trainData: any = { trainld: \", trainName: \", departureStation: \", departureStationTime:\", arrivalStation: \", arrivalStationTime: \", intermediate: []};",
+                    "PromptType": "Code",
+                    "lang": "javascript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 163
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { HttpClient } from '@angular/common/http';\\nimport { Component } from '@angular/core';\\nimport { FormBuilder } from '@angular/forms';\\n\\n@Component({\\n  selector: 'app-add-train',\\n  templateUrl: './add-train.component.html',\\n  styleUrls: ['./add-train.component.css']\\n})\\nexport class AddTrainComponent {\\n\\n  private apiUrl = 'http://localhost:8080';\\n\\n    trainData: any = {\\n      trainId: '',\\n      trainName: '',\\n      departureStation: '',\\n      departureStationTime: '',\\n      arrivalStation: '',\\n      arrivalStationTime: '',\\n      intermediate: []\\n    };\\n  \\n    constructor(private formBuilder: FormBuilder,private http:HttpClient) {}\\n  \\n    addIntermediateStation() {\\n      this.trainData.intermediate.push({\\n        stationId: '',\\n        stationName: '',\\n        arrivalTime: '',\\n        departureTime: ''\\n      });\\n    }\\n  \\n    removeIntermediateStation(index: number) {\\n      this.trainData.intermediate.splice(index, 1);\\n    }\\n  \\n    submitForm() {\\n      // Here, you can access the form data in this.trainData and send it to the backend or process it as needed.\\n      this.http.post(`${this.apiUrl}/add`,this.trainData).subscribe(\\n        (response) => {\\n          // Handle a successful response from the API\\n          console.log('Data saved successfully:', response);\\n        },\\n        (error) => {\\n          // Handle errors, e.g., display an error message\\n          console.error('Error:', error);\\n        }\\n      );\\n      \\n      alert(\\\"Train details Added successfully\\\")\\n      console.log(this.trainData);\\n    }\\n\\n    \\n\\n}\"",
+                            "id": 191
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 114,
+                    "Prompt": "create a concise exception handling block for adding 'train' details and print a success message using response Entity",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 164
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"\\npackage com.Train.TrainTime.Controller;\\n\\nimport com.Train.TrainTime.Exception.TrainNotFoundException;\\nimport com.Train.TrainTime.Model.Intermediate;\\nimport com.Train.TrainTime.Model.Time;\\nimport com.Train.TrainTime.Model.Train;\\nimport com.Train.TrainTime.Model.UpdateTime;\\nimport com.Train.TrainTime.Repository.TrainRepo;\\nimport com.Train.TrainTime.Service.MyService;\\nimport org.springframework.beans.factory.annotation.Autowired;\\nimport org.springframework.http.ResponseEntity;\\nimport org.springframework.web.bind.annotation.*;\\n\\nimport java.time.LocalTime;\\nimport java.time.format.DateTimeFormatter;\\nimport java.util.*;\\n\\n@RestController\\npublic class MyController {\\n\\n    @Autowired\\n    private TrainRepo tr;\\n\\n    @Autowired\\n    private MyService ms;\\n\\n    @PostMapping(\\\"/add\\\")\\n    public ResponseEntity<?> addTrain(@RequestBody Train train){\\n\\n\\n        try {\\n            System.out.println(train);\\n            ms.addTrain(train);\\n        }catch(Exception e){\\n            e.printStackTrace();\\n        }\\n\\n        return ResponseEntity.ok(\\\"Train details added successfully\\\");\\n    }\\n\\n    @GetMapping(\\\"/findById\\\")\\n    public ResponseEntity<?> getTrainById(@RequestParam int trainId){\\n\\n        if (tr.findById(trainId).isPresent()) {\\n            try {\\n                return ResponseEntity.ok(this.tr.findById(trainId));\\n            } catch (Exception e) {\\n                e.printStackTrace();\\n            }\\n        }\\n        return ResponseEntity.ok(\\\"No Train to be found\\\");\\n    }\\n\\n    @GetMapping(\\\"/find\\\")\\n    public ResponseEntity<?> getAllTrains() {\\n        List<Train> train = ms.getTrain();\\n        if (train.size() != 0) {\\n            try {\\n\\n                return ResponseEntity.ok(this.tr.findAll());\\n            } catch (Exception e) {\\n                e.printStackTrace();\\n            }\\n        }\\n        return ResponseEntity.ok(\\\"No Train to be found\\\");\\n    }\\n\\n    @PutMapping(\\\"/updateTime\\\")\\n    public ResponseEntity<?> UpdateTrainTime(@RequestBody UpdateTime updateTime) throws TrainNotFoundException {\\n        String msg=ms.updateIntermediate(updateTime);\\n\\n        return  ResponseEntity.ok(msg);\\n    }\\n\\n}\\n\"",
+                            "id": 192
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 115,
+                    "Prompt": "write a code for add Train method for saving 't' and related intermediate data with printStackTrace",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 165
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"public void addTrain(Train t){\\n        try{\\n        tr.save(t);\\n        for (Map<String, String> stationRequest : t.getIntermediate()){\\n            Time time=new Time();\\n            time.setStationId(stationRequest.get(\\\"stationId\\\"));\\n            time.setArrivalTime(stationRequest.get(\\\"arrivalTime\\\"));\\n            time.setDepartureTime(stationRequest.get(\\\"departureTime\\\"));\\n\\n            tir.save(time);\\n\\n            Intermediate intermediate=new Intermediate();\\n            intermediate.setTrainId(t.getTrainId());\\n            intermediate.setStations(t.getIntermediate());\\n            intermediate.setStationId(stationRequest.get(\\\"stationId\\\"));\\n\\n            Ir.save(intermediate);\\n\\n\\n\\n        }}catch (Exception e){\\n            e.printStackTrace();\\n        }\\n    }\"",
+                            "id": 193
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 116,
+                    "Prompt": "handle a train search by Id, returning the result or a 'No Train to be found' message, with exception handling ",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 166
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"@GetMapping(\\\"/findById\\\")\\n    public ResponseEntity<?> getTrainById(@RequestParam int trainId){\\n\\n        if (tr.findById(trainId).isPresent()) {\\n            try {\\n                return ResponseEntity.ok(this.tr.findById(trainId));\\n            } catch (Exception e) {\\n                e.printStackTrace();\\n            }\\n        }\\n        return ResponseEntity.ok(\\\"No Train to be found\\\");\\n    }\"",
+                            "id": 194
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 117,
+                    "Prompt": "write a program to split a string by \":\" into HH and mm local Time and add this time into present time",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 167
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"public String updateIntermediate(UpdateTime updateTime) throws TrainNotFoundException {\\n        Train train = tr.findById(updateTime.getTrainId()).orElseThrow(() -> new TrainNotFoundException(\\\"Train not found\\\"));\\n        System.out.println(train);\\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\\\"HH:mm\\\");\\n        Intermediate intermediate=new Intermediate();\\n        Time time=new Time();\\n        // Parse the lateTime string into hours and minutes\\n        String lateTimeParts[] = updateTime.getLateTime().split(\\\":\\\");\\n        int lateHours = Integer.parseInt(lateTimeParts[0]);\\n        int lateMinutes = Integer.parseInt(lateTimeParts[1]);\\n\\n        LocalTime newDepartureTime = LocalTime.parse(train.getDepartureStationTime(),formatter)\\n                .plusHours(lateHours)\\n                .plusMinutes(lateMinutes);\\n\\n        LocalTime newArrivalTime = LocalTime.parse(train.getArrivalStationTime(),formatter)\\n                .plusHours(lateHours)\\n                .plusMinutes(lateMinutes);\\n        List<Map<String, String>> intermediateStations = train.getIntermediate();\\n        for (Map<String, String> station : intermediateStations) {\\n//            String msg1=station.get(\\\"arrivalTime\\\");\\n//            System.out.println(msg1);\\n            LocalTime newStationArrivalTime = LocalTime.parse(station.get(\\\"arrivalTime\\\"),formatter)\\n                    .plusHours(lateHours)\\n                    .plusMinutes(lateMinutes);\\n//            String msg2=station.get(\\\"departureTime\\\");\\n//            System.out.println(msg2);\\n\\n            LocalTime newStationDepartureTime = LocalTime.parse(station.get(\\\"departureTime\\\"),formatter)\\n                    .plusHours(lateHours)\\n                    .plusMinutes(lateMinutes);\\n\\n            // Convert LocalTime to String if needed\\n            String newStationArrivalTimeString = newStationArrivalTime.toString();\\n            String newStationDepartureTimeString = newStationDepartureTime.toString();\\n\\n            // Set the updated times back to the IntermediateStation\\n            station.put(\\\"arrivalTime\\\", newStationArrivalTimeString);\\n            station.put(\\\"departureTime\\\", newStationDepartureTimeString);\\n\\n        }\\n\\n        // Convert LocalTime to String for train departure and arrival times if needed\\n        String newDepartureTimeString = newDepartureTime.toString();\\n        String newArrivalTimeString = newArrivalTime.toString();\\n\\n        // Update the train entity with the new times\\n        train.setDepartureStationTime(newDepartureTimeString);\\n        train.setArrivalStationTime(newArrivalTimeString);\\n        intermediate.setStations(train.getIntermediate());\\n        //time.setArrivalTime();\\n\\n        tr.save(train);\\n        return \\\"Details updated Successfully\\\";\\n\\n    }\"",
+                            "id": 195
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 118,
+                    "Prompt": "now add it in the map inside list time and convert it into String and save it in the trainRepo",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 168
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"public String updateIntermediate(UpdateTime updateTime) throws TrainNotFoundException {\\n        Train train = tr.findById(updateTime.getTrainId()).orElseThrow(() -> new TrainNotFoundException(\\\"Train not found\\\"));\\n        System.out.println(train);\\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\\\"HH:mm\\\");\\n        Intermediate intermediate=new Intermediate();\\n        Time time=new Time();\\n        // Parse the lateTime string into hours and minutes\\n        String lateTimeParts[] = updateTime.getLateTime().split(\\\":\\\");\\n        int lateHours = Integer.parseInt(lateTimeParts[0]);\\n        int lateMinutes = Integer.parseInt(lateTimeParts[1]);\\n\\n        LocalTime newDepartureTime = LocalTime.parse(train.getDepartureStationTime(),formatter)\\n                .plusHours(lateHours)\\n                .plusMinutes(lateMinutes);\\n\\n        LocalTime newArrivalTime = LocalTime.parse(train.getArrivalStationTime(),formatter)\\n                .plusHours(lateHours)\\n                .plusMinutes(lateMinutes);\\n        List<Map<String, String>> intermediateStations = train.getIntermediate();\\n        for (Map<String, String> station : intermediateStations) {\\n//            String msg1=station.get(\\\"arrivalTime\\\");\\n//            System.out.println(msg1);\\n            LocalTime newStationArrivalTime = LocalTime.parse(station.get(\\\"arrivalTime\\\"),formatter)\\n                    .plusHours(lateHours)\\n                    .plusMinutes(lateMinutes);\\n//            String msg2=station.get(\\\"departureTime\\\");\\n//            System.out.println(msg2);\\n\\n            LocalTime newStationDepartureTime = LocalTime.parse(station.get(\\\"departureTime\\\"),formatter)\\n                    .plusHours(lateHours)\\n                    .plusMinutes(lateMinutes);\\n\\n            // Convert LocalTime to String if needed\\n            String newStationArrivalTimeString = newStationArrivalTime.toString();\\n            String newStationDepartureTimeString = newStationDepartureTime.toString();\\n\\n            // Set the updated times back to the IntermediateStation\\n            station.put(\\\"arrivalTime\\\", newStationArrivalTimeString);\\n            station.put(\\\"departureTime\\\", newStationDepartureTimeString);\\n\\n        }\\n\\n        // Convert LocalTime to String for train departure and arrival times if needed\\n        String newDepartureTimeString = newDepartureTime.toString();\\n        String newArrivalTimeString = newArrivalTime.toString();\\n\\n        // Update the train entity with the new times\\n        train.setDepartureStationTime(newDepartureTimeString);\\n        train.setArrivalStationTime(newArrivalTimeString);\\n        intermediate.setStations(train.getIntermediate());\\n        //time.setArrivalTime();\\n\\n        tr.save(train);\\n        return \\\"Details updated Successfully\\\";\\n\\n    }\"",
+                            "id": 196
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 119,
+                    "Prompt": "Command to build angular project",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": "To build an Angular project, you can use the ng build command in the terminal. This will compile the project and output the build artifacts in the dist/directory.\nHere's an example command to build an Angular project:\nYou can also add additional flags to the command to customize the build process, such as --prod to build for production, or --aot to enable Ahead- of-Time compilation.",
+                            "id": 169
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"ng build\"",
+                            "id": 197
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 120,
+                    "Prompt": "Command to build springboot project",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 170
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"./mvn wclean package\"",
+                            "id": 198
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 121,
+                    "Prompt": "16.\tProvide me a detailed release note for Train Scheduler use case which we have developed the pointers for the same are: Ut screen to add new trains to the schedule, update arrival and departure times for existing trains, and. delete trains from the system based on their unique train numbers. We have fix on bug during development which is: API is returning incorrect data for certain trains after updatingbthe train schedule",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 171
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"8# New Features\\nAdded UI screen to add new trains to the schedule\\nAdded UI screen to update arrival and departure times for existing trains\\nAdded UI screen to delete trains from the system based on their unique train numbers\\n### Bug Fixes\\nFixed issue where API was returning incorrect data for certain trains after updating ti\\n### Known Issues\\nB\\nNone\\n*** Dependencies\\nAngular v12.2.3\\nNode.js v14.17.6\\nExpress.js v4.17.1\\nMongoDB v4.4.9\\n### Installation Instructions\\n1. Clone the repository from GitHub\\n2. Install Node.js and MongoDB\\n3. Run \\\"npm install to install dependencies\\n4. Run npm start to start the server\\n5. Open the application in a web browser at http://localhost:3000\\nTesting Instructions\\n1. Open the application in a web browser at http://localhost:3000\\n2. Add a new train to the schedule\\n3. Update the arrival and departure times for an existing train\\n4. Delete a train from the system based on its unique train number\\n5. Verify that the changes are reflected in the UI and in the API response\"",
+                            "id": 199
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 122,
+                    "Prompt": "Provide unit test case for selected code\n<form (ngSubmit)=\"submitForm()\">\n  <h1>Add Train</h1>\n  <div class=\"first\">\n    <div>\n      <label for=\"trainId\">Train ID:</label>\n      <input type=\"text\" id=\"trainId\" [(ngModel)]=\"trainData.trainId\" name=\"trainId\">\n    </div>\n    <div>\n      <label for=\"trainName\">Train Name:</label>\n      <input type=\"text\" id=\"trainName\" [(ngModel)]=\"trainData.trainName\" name=\"trainName\">\n    </div>\n    <div>\n      <label for=\"departureStation\">Departure Station:</label>\n      <input type=\"text\" id=\"departureStation\" [(ngModel)]=\"trainData.departureStation\" name=\"departureStation\">\n    </div>\n  \n    <div>\n      <label for=\"departureStationTime\">Departure Time:</label>\n      <input type=\"text\" id=\"departureStationTime\" [(ngModel)]=\"trainData.departureStationTime\"\n        name=\"departureStationTime\">\n    </div>\n    <div>\n      <label for=\"arrivalStation\">Arrival Station:</label>\n      <input type=\"text\" id=\"arrivalStation\" [(ngModel)]=\"trainData.arrivalStation\" name=\"arrivalStation\">\n    </div>\n    <div>\n      <label for=\"arrivalStationTime\">Arrival Time:</label>\n      <input type=\"text\" id=\"arrivalStationTime\" [(ngModel)]=\"trainData.arrivalStationTime\" name=\"arrivalStationTime\">\n    </div>\n  </div>\n  <div>\n    <h2>Intermediate Stations</h2>\n    <div class=\"intermediate-container\">\n      <div *ngFor=\"let station of trainData.intermediate; let i = index\">\n        <div class=\"first\">\n          <div>\n            <label for=\"stationName{{i}}\">Station Id:</label>\n            <input type=\"text\" id=\"stationName{{i}}\" [(ngModel)]=\"station.stationId\" name=\"stationName{{i}}\">\n          </div>\n          <div>\n          <label for=\"stationName{{i}}\">Station Name:</label>\n          <input type=\"text\" id=\"stationName{{i}}\" [(ngModel)]=\"station.stationName\" name=\"stationName{{i}}\">\n        </div>\n        <div>\n          <label for=\"arrivalTime{{i}}\">Arrival Time:</label>\n          <input type=\"text\" id=\"arrivalTime{{i}}\" [(ngModel)]=\"station.arrivalTime\" name=\"arrivalTime{{i}}\">\n        </div>\n        <div>\n          <label for=\"departureTime{{i}}\">Departure Time:</label>\n          <input type=\"text\" id=\"departureTime{{i}}\" [(ngModel)]=\"station.departureTime\" name=\"departureTime{{i}}\">\n        </div>\n      </div>\n        <button type=\"button\" (click)=\"removeIntermediateStation(i)\">Remove</button>\n      </div>\n    </div>\n    <button type=\"button\" (click)=\"addIntermediateStation()\">Add Intermediate Station</button>\n  </div>\n  <div>\n    <button type=\"submit\">Submit</button>\n  </div>\n</form>",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 172
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { ComponentFixture, TestBed } from '@angular/core/testing';\\nimport { AddTrainComponent } from './add-train.component';\\nimport { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';\\nimport { FormsModule } from '@angular/forms';\\n\\ndescribe('AddTrainComponent', () => {\\n  let component: AddTrainComponent;\\n  let fixture: ComponentFixture<AddTrainComponent>;\\n  let httpMock: HttpTestingController;\\n\\n  beforeEach(() => {\\n    TestBed.configureTestingModule({\\n      declarations: [AddTrainComponent],\\n      imports: [HttpClientTestingModule, FormsModule],\\n    });\\n\\n    fixture = TestBed.createComponent(AddTrainComponent);\\n    component = fixture.componentInstance;\\n    httpMock = TestBed.inject(HttpTestingController);\\n  });\\n\\n  it('should create', () => {\\n    expect(component).toBeTruthy();\\n  });\\n\\n  it('should add an intermediate station', () => {\\n    const initialIntermediateStations = component.trainData.intermediate.length;\\n    component.addIntermediateStation();\\n    const updatedIntermediateStations = component.trainData.intermediate.length;\\n\\n    expect(updatedIntermediateStations).toBe(initialIntermediateStations + 1);\\n  });\\n\\n  it('should remove an intermediate station', () => {\\n    component.trainData.intermediate = [\\n      { stationId: '1', stationName: 'Station A', arrivalTime: '10:00', departureTime: '10:30' },\\n      { stationId: '2', stationName: 'Station B', arrivalTime: '11:00', departureTime: '11:30' },\\n    ];\\n\\n    const initialIntermediateStations = component.trainData.intermediate.length;\\n    component.removeIntermediateStation(0);\\n    const updatedIntermediateStations = component.trainData.intermediate.length;\\n\\n    expect(updatedIntermediateStations).toBe(initialIntermediateStations - 1);\\n    expect(component.trainData.intermediate[0].stationName).toBe('Station B');\\n  });\\n\\n  it('should submit form data', () => {\\n    // You need to mock the HTTP request and verify that it's called with the expected data\\n    const formData = {\\n      trainId: '123',\\n      trainName: 'Test Train',\\n      departureStation: 'Station A',\\n      departureStationTime: '10:00',\\n      arrivalStation: 'Station B',\\n      arrivalStationTime: '12:00',\\n      intermediate: [],\\n    };\\n\\n    component.trainData = formData;\\n    component.submitForm();\\n\\n    const req = httpMock.expectOne('http://localhost:8080/add');\\n    expect(req.request.method).toBe('POST');\\n    expect(req.request.body).toEqual(formData);\\n\\n    // You can simulate a successful response from the server using req.flush()\\n    const mockResponse = { success: true };\\n    req.flush(mockResponse);\\n  });\\n\\n  afterEach(() => {\\n    httpMock.verify(); // Verify that no unexpected requests were made\\n  });\\n});\"",
+                            "id": 200
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 123,
+                    "Prompt": "Provide unit test case for selected code\n<div class=\"container\">\n    <div class=\"form-wrapper\">\n      <h1>Add Delay Timing</h1>\n      <form (ngSubmit)=\"proceed()\" class=\"form\">\n        <div class=\"form-group\">\n          <label for=\"trainNumber\">Train Number</label>\n          <input\n            type=\"text\"\n            class=\"form-control\"\n            id=\"trainNumber\"\n            name=\"trainNumber\"\n            placeholder=\"Enter train number\"\n            [(ngModel)]=\"trainData.trainId\"\n            required\n            #trainNumberInput=\"ngModel\"\n          />\n          <div *ngIf=\"trainNumberInput.invalid && trainNumberInput.touched\" class=\"text-danger\">\n            Train Id is required.\n          </div>\n        </div>\n        <div class=\"form-group\">\n          <label for=\"delay\">Enter Delay Timing</label>\n          <input\n            type=\"text\"\n            class=\"form-control\"\n            id=\"date\"\n            name=\"date\"\n            placeholder=\"Enter Time HH:MM\"\n            [(ngModel)]=\"trainData.lateTime\"\n            required\n            #delaytimeInput=\"ngModel\"\n          />\n          <div *ngIf=\"delaytimeInput.invalid && delaytimeInput.touched\" class=\"text-danger\">\n            Delay Time is required.\n          </div>\n        </div>\n        <button type=\"submit\" class=\"btn btn-primary\" >Proceed</button>\n      </form>\n    </div>\n  </div>\n  ",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 173
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { ComponentFixture, TestBed } from '@angular/core/testing';\\nimport { AdminComponent } from './admin.component';\\nimport { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';\\nimport { FormsModule } from '@angular/forms';\\n\\ndescribe('AdminComponent', () => {\\n  let component: AdminComponent;\\n  let fixture: ComponentFixture<AdminComponent>;\\n  let httpMock: HttpTestingController;\\n\\n  beforeEach(() => {\\n    TestBed.configureTestingModule({\\n      declarations: [AdminComponent],\\n      imports: [HttpClientTestingModule, FormsModule],\\n    });\\n\\n    fixture = TestBed.createComponent(AdminComponent);\\n    component = fixture.componentInstance;\\n    httpMock = TestBed.inject(HttpTestingController);\\n  });\\n\\n  it('should create', () => {\\n    expect(component).toBeTruthy();\\n  });\\n\\n  it('should update train delay time', () => {\\n    const formData = {\\n      trainId: '123',\\n      lateTime: '2:30',\\n    };\\n\\n    component.trainData = formData;\\n    component.proceed();\\n\\n    const req = httpMock.expectOne('http://localhost:8080/updateTime');\\n    expect(req.request.method).toBe('PUT');\\n    expect(req.request.body).toEqual(formData);\\n\\n    const mockResponse = {}; // You can provide a mock response if needed\\n    req.flush(mockResponse);\\n  });\\n\\n  afterEach(() => {\\n    httpMock.verify();\\n  });\\n});\"",
+                            "id": 201
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 124,
+                    "Prompt": "Provide unit test case for selected code\n<div class=\"main\">\n<div>\n    <div class=\"card\">\n    <h2>Search Train Details by Train ID</h2>\n    <label for=\"trainId\">Enter Train ID:</label>\n    <input type=\"text\" id=\"trainId\" [(ngModel)]=\"searchTrainId\" name=\"trainId\">\n    <button (click)=\"searchTrain()\">Search</button>\n</div>\n  </div>\n  <div *ngIf=\"flag\" class=\"card\">\n  <div *ngIf=\"trainDetails\">\n    <h2>Train Details</h2>\n    <div class=\"details\">\n    <p><strong>Train Number:</strong> {{ trainDetails.trainId }}</p>\n    <p><strong>Train Name:</strong> {{ trainDetails.trainName }}</p>\n    <p><strong>Departure Station:</strong> {{ trainDetails.departureStation }}</p>\n    <p><strong>Departure Station Time:</strong> {{ trainDetails.departureStationTime }}</p>\n    <p><strong>Arrival Station:</strong> {{ trainDetails.arrivalStation }}</p>\n    <p><strong>Arrival Station Time:</strong> {{ trainDetails.arrivalStationTime }}</p>\n</div>\n    <h3>Intermediate Stations</h3>\n    <ul>\n      <li *ngFor=\"let station of trainDetails.intermediate\">\n        <p><strong>Station Name:</strong> {{ station.stationName }}</p>\n        <p><strong>Arrival Time:</strong> {{ station.arrivalTime }}</p>\n        <p><strong>Departure Time:</strong> {{ station.departureTime }}</p>\n      </li>\n    </ul>\n    </div>\n  </div>\n</div>",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 174
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { ComponentFixture, TestBed } from '@angular/core/testing';\\nimport { TrainDetailsComponent } from './train-details.component';\\nimport { FormsModule } from '@angular/forms';\\nimport { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';\\n\\ndescribe('TrainDetailsComponent', () => {\\n  let component: TrainDetailsComponent;\\n  let fixture: ComponentFixture<TrainDetailsComponent>;\\n  let httpMock: HttpTestingController;\\n\\n  beforeEach(() => {\\n    TestBed.configureTestingModule({\\n      declarations: [TrainDetailsComponent],\\n      imports: [FormsModule, HttpClientTestingModule],\\n    });\\n\\n    fixture = TestBed.createComponent(TrainDetailsComponent);\\n    component = fixture.componentInstance;\\n    httpMock = TestBed.inject(HttpTestingController);\\n  });\\n\\n  it('should create', () => {\\n    expect(component).toBeTruthy();\\n  });\\n\\n  it('should initially have a flag set to false', () => {\\n    expect(component.flag).toBeFalse();\\n  });\\n\\n  it('should search for train details and update the flag', () => {\\n    const trainId = '123';\\n    component.searchTrainId = trainId;\\n\\n    const mockTrainDetails = {\\n      trainId: trainId,\\n      trainName: 'Test Train',\\n      departureStation: 'Station A',\\n      departureStationTime: '10:00',\\n      arrivalStation: 'Station B',\\n      arrivalStationTime: '12:00',\\n      intermediate: [\\n        {\\n          stationId: '1',\\n          stationName: 'Station A',\\n          arrivalTime: '10:30',\\n          departureTime: '10:45',\\n        },\\n        {\\n          stationId: '2',\\n          stationName: 'Station B',\\n          arrivalTime: '11:30',\\n          departureTime: '11:45',\\n        },\\n      ],\\n    };\\n\\n    component.searchTrain();\\n    const req = httpMock.expectOne(`http://localhost:8080/findById?trainId=${trainId}`);\\n    expect(req.request.method).toBe('GET');\\n    req.flush(mockTrainDetails);\\n\\n    expect(component.flag).toBeTrue();\\n    expect(component.trainDetails).toEqual(mockTrainDetails);\\n  });\\n\\n  it('should handle errors when searching for train details', () => {\\n    const trainId = '123';\\n    component.searchTrainId = trainId;\\n\\n    component.searchTrain();\\n    const req = httpMock.expectOne(`http://localhost:8080/findById?trainId=${trainId}`);\\n    expect(req.request.method).toBe('GET');\\n    req.flush(null, { status: 404, statusText: 'Not Found' });\\n\\n    expect(component.flag).toBeTrue();\\n    expect(component.trainDetails).toBeNull();\\n  });\\n\\n  afterEach(() => {\\n    httpMock.verify();\\n  });\\n});\"",
+                            "id": 202
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 125,
+                    "Prompt": "Create a junit test case for selected method\n@PostMapping(\"/add\")\n    public ResponseEntity<?> addTrain(@RequestBody Train train){\n\n\n        try {\n            System.out.println(train);\n            ms.addTrain(train);\n        }catch(Exception e){\n            e.printStackTrace();\n        }\n\n        return ResponseEntity.ok(\"Train details added successfully\");\n    }",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 175
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"@Test\\npublic void testAddTrain()(\\nTrain train = new Train (trainId: 111, trainName:\\\"lko express\\\", depar\\nResponseEntity<?> expectedResponse = ResponseEntity.ok(body: \\\"Trai\\nwhen(ms.addTrain(train)).thenReturn(value: true);\\nResponseEntity<?> actualResponse myController.addTrain(train);\\nassertEquals(expectedResponse, actualResponse);\\nverify(ms, times (wantedNumberOfInvocations:1)).addTrain(train);\\n}\"",
+                            "id": 203
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 126,
+                    "Prompt": "Create a junit test case by checking the return value is empty or not\n   @GetMapping(\"/findById\")\n    public ResponseEntity<?> getTrainById(@RequestParam int trainId){\n\n        if (tr.findById(trainId).isPresent()) {\n            try {\n                return ResponseEntity.ok(this.tr.findById(trainId));\n            } catch (Exception e) {\n                e.printStackTrace();\n            }\n        }\n        return ResponseEntity.ok(\"No Train to be found\");\n    }\n",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 176
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Test\\npublic void test@etTrainById()\\nOptional<Train> response ms.getTrainById(id:1);\\nassertNotNull(response);\\n}\"",
+                            "id": 204
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 127,
+                    "Prompt": "Create junit test case for the selected method\n @PutMapping(\"/updateTime\")\n    public ResponseEntity<?> UpdateTrainTime(@RequestBody UpdateTime updateTime) throws TrainNotFoundException {\n        String msg=ms.updateIntermediate(updateTime);\n\n        return  ResponseEntity.ok(msg);\n    }\n",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 177
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"@Test\\npublic void testupdateTrainTime() throws TrainNotFoundException UpdateTime updateTime new UpdateTime();\\nupdateTime.setTrainId (trainId:123);\\nwhen (ns.updateIntermediate(updateTime)).thenReturn(value: \\\"Success\\\");\\nResponseEntity<?> responseEntity myController.UpdateTrainTime(updateTime);\\nassertEquals(expected: \\\"Success\\\", responseEntity.getBody());\\n}\\n}\"",
+                            "id": 205
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 128,
+                    "Prompt": "Provide me a provisioning script to deploy application in azure kubernate",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 178
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"apiVersion: apps/v1\\nkind: Deployment\\nmetadata:\\n  name: train-scheduler\\nspec:\\n  replicas: 3\\n  selector:\\n    matchLabels:\\n      app: train-scheduler\\n  template:\\n    metadata:\\n      labels:\\n        app: train-scheduler\\n    spec:\\n      containers:\\n      - name: train-scheduler\\n        image: train-scheduler-image:latest\\n        ports:\\n        - containerPort: 8080\\n---\\napiVersion: v1\\nkind: Service\\nmetadata:\\n  name: train-scheduler\\nspec:\\n  selector:\\n    app: train-scheduler\\n  ports:\\n  - protocol: TCP\\n    port: 80\\n    targetPort: 8080\\n  type: ClusterIP\\n\"",
+                            "id": 206
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 129,
+                    "Prompt": "and the command to apply above YML file to the AKS cluster ",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 179
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"To apply the YAML file to your AKS cluster, you can use the kubectl apply command. Here are the steps:\\n1. Make sure you have the kubectl command-line tool installed and configured to connect to your AKS cluster.\\n2. Save the YAML file to your local machine.\\n3. Open a terminal or command prompt and navigate to the directory where the YAML file is saved.\\n4. Run the following command to apply the YAML file to your AKS cluster:\\nkubectl apply -f <filename>.yaml\\nReplace <filename> with the name of the YAML file you saved in step 2.\\nFor example, if your YAML file is named wy-app.yam), the command would be:\\nkubectl apply -f my-app.yaml\\n5. Wait for the deployment to complete. You can check the status of the deployment by running the following command:\\nkubectl get pods\\nThis will show you the status of the pods running in your AKS cluster. Once the pods are in the Running state, your application should be accessible.\"",
+                            "id": 207
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 130,
+                    "Prompt": "generate documentation of selected code\npackage com.Train.TrainTime.Model;\n\nimport org.springframework.data.annotation.Id;\nimport org.springframework.data.mongodb.core.mapping.Document;\n\nimport java.util.List;\nimport java.util.Map;\n\n@Document(collection = \"train\")\npublic class Train {\n\n    @Id\n    private int trainId;\n    private String trainName;\n    private String departureStation;\n    private String departureStationTime;\n    private String arrivalStation;\n    private String arrivalStationTime;\n\n    private List<Map<String,String>> intermediate;\n\n    @Override\n    public String toString() {\n        return \"Train{\" +\n                \"trainId=\" + trainId +\n                \", trainName='\" + trainName + '\\'' +\n                \", departureStation='\" + departureStation + '\\'' +\n                \", departureStationTime='\" + departureStationTime + '\\'' +\n                \", arrivalStation='\" + arrivalStation + '\\'' +\n                \", arrivalStationTime='\" + arrivalStationTime + '\\'' +\n                \", intermediate=\" + intermediate +\n                '}';\n    }\n\n    public Train(int trainId, String trainName, String departureStation, String departureStationTime, String arrivalStation, String arrivalStationTime, List<Map<String, String>> intermediate) {\n        this.trainId = trainId;\n        this.trainName = trainName;\n        this.departureStation = departureStation;\n        this.departureStationTime = departureStationTime;\n        this.arrivalStation = arrivalStation;\n        this.arrivalStationTime = arrivalStationTime;\n        this.intermediate = intermediate;\n    }\n\n    public int getTrainId() {\n        return trainId;\n    }\n\n    public void setTrainId(int trainId) {\n        this.trainId = trainId;\n    }\n\n    public String getTrainName() {\n        return trainName;\n    }\n\n    public void setTrainName(String trainName) {\n        this.trainName = trainName;\n    }\n\n    public String getDepartureStation() {\n        return departureStation;\n    }\n\n    public void setDepartureStation(String departureStation) {\n        this.departureStation = departureStation;\n    }\n\n    public String getDepartureStationTime() {\n        return departureStationTime;\n    }\n\n    public void setDepartureStationTime(String departureStationTime) {\n        this.departureStationTime = departureStationTime;\n    }\n\n    public String getArrivalStation() {\n        return arrivalStation;\n    }\n\n    public void setArrivalStation(String arrivalStation) {\n        this.arrivalStation = arrivalStation;\n    }\n\n    public String getArrivalStationTime() {\n        return arrivalStationTime;\n    }\n\n    public void setArrivalStationTime(String arrivalStationTime) {\n        this.arrivalStationTime = arrivalStationTime;\n    }\n\n    public List<Map<String, String>> getIntermediate() {\n        return intermediate;\n    }\n\n    public void setIntermediate(List<Map<String, String>> intermediate) {\n        this.intermediate = intermediate;\n    }\n\n    public Train() {\n    }\n}",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 180
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"To generate Javadoc documentation for the Train class, follow these steps:\\n1. Open a terminal or command prompt and navigate to the directory containing the Train.java file.\\n2. Run the following command to generate the Javadoc documentation:\\nA\\njavadoc Train.java\\n3. This will generate a set of HTML files in a directory named \\\"doc\\\" in the current directory.\\n4. Open the index.html file in the doc directory to view the generated documentation in a web browser.\\nThe generated documentation will include information about the class, its constructors, methods, and fields, as well as any documentation comments that were included in the source code.\"",
+                            "id": 208
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 131,
+                    "Prompt": "generate documentation of selected code\n @PostMapping(\"/add\")\n    public ResponseEntity<?> addTrain(@RequestBody Train train){\n\n\n        try {\n            System.out.println(train);\n            ms.addTrain(train);\n        }catch(Exception e){\n            e.printStackTrace();\n        }\n\n        return ResponseEntity.ok(\"Train details added successfully\");\n    }\n\n    @GetMapping(\"/findById\")\n    public ResponseEntity<?> getTrainById(@RequestParam int trainId){\n\n        if (tr.findById(trainId).isPresent()) {\n            try {\n                return ResponseEntity.ok(this.tr.findById(trainId));\n            } catch (Exception e) {\n                e.printStackTrace();\n            }\n        }\n        return ResponseEntity.ok(\"No Train to be found\");\n    }\n\n    @GetMapping(\"/find\")\n    public ResponseEntity<?> getAllTrains() {\n        List<Train> train = ms.getTrain();\n        if (train.size() != 0) {\n            try {\n\n                return ResponseEntity.ok(this.tr.findAll());\n            } catch (Exception e) {\n                e.printStackTrace();\n            }\n        }\n        return ResponseEntity.ok(\"No Train to be found\");\n    }\n\n    @PutMapping(\"/updateTime\")\n    public ResponseEntity<?> UpdateTrainTime(@RequestBody UpdateTime updateTime) throws TrainNotFoundException {\n        String msg=ms.updateIntermediate(updateTime);\n\n        return  ResponseEntity.ok(msg);\n    }\n",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 181
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"To generate documentation for the selected code, you can use the Javadoc tool. Javadoc is a tool that parses the declarations and documentation comments in a set of Java source files and produces a set of HTML pages describing the classes, interfaces, constructors, methods, and fields.\\nTo generate Javadoc documentation for the MyController class, follow these steps:\\n1. Open a terminal or command prompt and navigate to the directory containing the MyController.java file.\\n2. Run the following command to generate the Javadoc documentation:\\njavadoc MyController.java\\n3. This will generate a set of HTML files in a directory named \\\"doc\\\" in the current directory.\\n4. Open the index.html file in the doc directory to view the generated documentation in a web browser.\\nThe generated documentation will include information about the class, its constructors, methods, and fields, as well as any documentation comments that were included in the source code.\"",
+                            "id": 209
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 132,
+                    "Prompt": "generate documentation of selected code\n@GetMapping(\"/find\")\n    public ResponseEntity<?> getAllTrains() {\n        List<Train> train = ms.getTrain();\n        if (train.size() != 0) {\n            try {\n\n                return ResponseEntity.ok(this.tr.findAll());\n            } catch (Exception e) {\n                e.printStackTrace();\n            }\n        }\n        return ResponseEntity.ok(\"No Train to be found\");\n    }",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " This documentation describes the purpose of the method and its return value. It does not have any parameters, so there is no need to document those. You can add more detailed documentation if necessary, such as describing the format of the list of trains or the circumstances under which the \"No Train to be found\" message is returned. ",
+                            "id": 182
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\" This code defines a method named getAllTrains in the MyController class. The method returns a ResponseEntity object that contains either a list of all trains or a message indicating that no trains were found.\\n\\nTo generate documentation for this method, you can use Javadoc comments to describe the purpose of the method, \\nTo generate documentation for this method, you can use Javadoc comments to describe the purpose of the method, its parameters, and its return value. Here's an example of how you could document.this method:\\n\\n...\\n\\n/**\\n\\n**Retrieves a list of all trains.\\n\\n*\\n\\n* @return a ResponseEntity object containing either\\n\\n*/\\n\\nT public ResponseEntity<?> getAllTrains() ( List<Train> train = ms.getTrain(); if (train.size() 1= 0) (\\n\\ntry {\\n\\nreturn ResponseEntity.ok(this.tr.findAll\\n\\n} catch (Exception e) ( e.printStackTrace(); \\n• Retrieves a list of all trains.\\n\\n* @return a ResponseEntity object containing either\\n\\n*/\\n\\npublic ResponseEntity<?> getAllTrains() {\\n\\nList<Train> train = ms.getTrain();\\n\\nif (train.size() != 0) {\\n\\ntry {\\n\\nreturn ResponseEntity.ok(this.tr.findAll\\n\\n} catch (Exception e) {\\n\\ne.printStackTrace();\\n\\n}\\n\\n\\n\\n}\\n\\nreturn ResponseEntity.ok(\\\"No Train to be found\\\") }\\n\\n\"",
+                            "id": 210
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 133,
+                    "Prompt": "public ResponseEntity<?> getAllTrains() {\nRemove usage c\nList<Train> train = ms.getTrain();\nif (train.size() != 0) {\nUse isEmpty() to check whet\ntry {\nreturn ResponseEntity.ok(this.tr.findAll());\n} catch (Exception e) {\ne.printStackTrace();\n}\nreturn ResponseEntity.ok(body: \"No Train to be found\");\n}\nOptimize this code with best practice",
+                    "PromptType": "Code",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 183
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Here are some suggestions to optimize the code:\\n1. Remove the try-catch block as it is not necessary and can hide potential errors.\\n2. Use the isEmpty() method instead of size() 1= 0 for readability.\\nA\\n}\\n3. Remove the unnecessary train variable.\\n4. Use a more descriptive message for when no trains are found.\\nHere is the optimized code:\\n08\\npublic ResponseEntity<?> getAllTrains() {\\nList<Train> trains = ms.getTrain();\\nif (Itrains.isEmpty()) {\\nreturn ResponseEntity Jok(this.tr.findAll());\\n}\\nreturn ResponseEntity.ok(\\\"No trains found.\\\");\\n}\"",
+                            "id": 211
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "articleId": 1441,
+            "articleName": "SDLC Use Case for Car Insurance Company",
+            "createdDate": "2024-12-10T12:40:24.111Z",
+            "category_id": 7,
+            "sub_category_id": 16,
+            "tech_id": 15,
+            "is_approved": 1,
+            "category_name": "END TO END USECASES",
+            "sub_category_name": "END TO END USECASE",
+            "tech_name": "VUE",
+            "video_url": "https://genaiexperiencestorage.blob.core.windows.net/prompt-lib/Car%20Insurance%20Claim%20%26%20Road%20Side%20Assisstance%20v2.1.mp4?sv=2024-08-04&st=2025-02-27T13%3A56%3A10Z&se=2025-08-26T13%3A56%3A10Z&sr=b&sp=r&sig=8sc%2FSHmrUBUMZIjwL9l6zZOr6GMQhAqh3K8YuG77iaA%3D",
+            "video_id": 1408,
+            "image_url": null,
+            "image_id": null,
+            "document_url": null,
+            "document_id": null,
+            "is_private": false,
+            "repository_name": null,
+            "instruction": null,
+            "prompts": [
+                {
+                    "PromptId": 158,
+                    "Prompt": "𝘽𝙐𝙎𝙄𝙉𝙀𝙎𝙎 𝘿𝙀𝙈𝘼𝙉𝘿 :\nCreate a requirement document for a use case of a Insurance Company which has an application with a dashboard with 2 buttons of File Claim and Request Help, When Clicked on File Claim, it will open a camera where we can click the photo of the vehicle number and from the photo, we will be able to generate the Insurance claim for the car and a ticket will also be generated. In the Request Help area, the location of the phone will be taken and based on the location, the help will arrive to the user.",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 218
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Here is a sample requirement document for the use case you described:\\nRequirement Document for Insurance App\\nIntroduction\\nThe Insurance App is a mobile application that allows users to file claims and request help from their insurance company. The app has two main features: File Claim and Request Help.\\nFile Claim\\nWhen the user clicks on the File Claim button, the app will open the camera. The user will be prompted to take a photo of the vehicle number. The app will then use image recognition technology to extract the vehicle number from the photo. Based on the vehicle number, the app will generate an insurance claim for the car. A ticket will also be generated and sent to the user.\\nRequest Help\\nWhen the user clicks on the Request Help button, the app will use the phone's location services to determine the user's location. The app will then send the user's location to the insurance company. Based on the user's location, the insurance company will dispatch help to the user.\\n\\nUser Interface\\nThe app will have a dashboard with two buttons: File Claim and Request Help. When the user clicks on either button, the appropriate action will be taken.\\nTechnology Stack\\nThe app will be built using Java and the Spring Boot framework. The image recognition technology will be provided by Google Cloud Vision API. The location services will be provided by Google Maps API.\\nTesting\\nThe app will be tested using unit tests and integration tests. The tests will be run using Maven.\\nDeployment\\nThe app will be deployed to a cloud platform such as AWS or Google Cloud Platform. The app will be deployed using Docker containers.\"",
+                            "id": 248
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 159,
+                    "Prompt": "𝘿𝙚𝙨𝙞𝙜𝙣 :\nDesign a database design for the use cases.",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 219
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Based on the use case described, we can design a database schema with a single table to store information about the vehicles and their insurance claims. Here's an example of a database schema for this use case:\\nVEHICLE\\nvehicle_id (PK) vehicle_number\\nclaim_date\\nclaim_amount\\nIn this schema, the VEHICLE table has the following columns:\\n• vehicle_id: A unique identifier for each vehicle (primary key).\\n• vehicle_number: The number of the vehicle for which the claim is being filed.\\n• claim_date: The date on which the claim was filed.\\nclaim_amount: The amount of the claim.\\nThis schema allows us to store information about each vehicle and its insurance claim. We can use the vehicle_id column to link the VEHICLE table to other tables in the database if necessary.\\nNote that this is just an example of a database schema for this use case. Depending on the specific requirements of your application, you may need to modify the schema or add additional tables to store other types of information.\\n\"",
+                            "id": 249
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 160,
+                    "Prompt": "𝑪𝒐𝒅𝒊𝒏𝒈 𝑷𝒉𝒂𝒔𝒆 :\nUse and exception framework to handle the errors and exceptions in the code.",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 220
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend.controller;\\n\\nimport com.cg.insuranceappbackend.model.Response;\\nimport com.cg.insuranceappbackend.model.Vehicle;\\nimport com.cg.insuranceappbackend.model.VehicleAssistance;\\nimport com.cg.insuranceappbackend.repository.VehicleRepository;\\nimport org.springframework.beans.factory.annotation.Autowired;\\nimport org.springframework.http.ResponseEntity;\\nimport org.springframework.web.bind.annotation.PostMapping;\\nimport org.springframework.web.bind.annotation.RequestBody;\\nimport org.springframework.web.bind.annotation.RestController;\\n\\n@RestController\\npublic class VehicleController {\\n    @Autowired\\n    VehicleRepository repo;\\n\\n    @PostMapping(\\\"/raiseClaim\\\")\\n    public ResponseEntity<Response> raiseClaim(@RequestBody Vehicle vehicle) {\\n        repo.save(vehicle);\\n        Response response=new Response(\\\"Ticket has been raised for the vehicle number: \\\" + vehicle.getVehicleNumber() + \\\". We'll get in touch with you soon.\\\");\\n        return ResponseEntity.ok(response);\\n    }\\n\\n\\n}\\n\\nIn this updated version of the VehicleController class, we've added an @ExceptionHandler method that handles any exceptions that occur in the raiseClaim method or any other methods in the class. The @ExceptionHandler method takes an Exception object as a parameter and returns a ResponseEntity object that contains an error message. In this example, we're returning a 500 status code to indicate that an internal server error occurred.\\nNote that this is just an example of how to handle exceptions in a Spring controller. Depending on the specific requirements of your application, you may need to handle exceptions differently or use a different exception framework.\\n\"",
+                            "id": 250
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 161,
+                    "Prompt": "Create a class with the name Response that has attribute message of type string",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 221
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend.model;\\n\\nimport lombok.Data;\\n\\n@Data\\npublic class Response {\\n    private String msg;\\n\\n    public Response(String msg) {\\n        this.msg = msg;\\n    }\\n}\"",
+                            "id": 251
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 162,
+                    "Prompt": "Create a class with the name vehicle that has attribute vehicleNumber of type string and also add a constructor with parameter vehicleNumber.",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 222
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend.model;\\n\\nimport lombok.Data;\\nimport org.springframework.data.mongodb.core.mapping.Document;\\n\\n@Data\\npublic class Vehicle {\\n    private String vehicleNumber;\\n}\"",
+                            "id": 252
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 163,
+                    "Prompt": "Create a prompt with the name VehicleAssistance that has attributes vehicleNumber, name, contactNumber, latitude, longitude, of type String and also add a constructor with parameters vehicleNumber, name, contactNumber.",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 223
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend.model;\\n\\nimport lombok.Data;\\nimport org.springframework.data.mongodb.core.mapping.Document;\\n\\n@Data\\npublic class VehicleAssistance {\\n    private String name;\\n    private String vehicleNumber;\\n    private String contactNumber;\\n    private String latitude;\\n    private String longitude;\\n}\"",
+                            "id": 253
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 164,
+                    "Prompt": "Create a class with the name vehicleAssistanceController and Annotate it with @RestController it should have post method to add vehicle assistance request and return type should be of type response.",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 224
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend.controller;\\n\\nimport com.cg.insuranceappbackend.model.*;\\nimport com.cg.insuranceappbackend.repository.LocationRepository;\\nimport com.cg.insuranceappbackend.repository.VehicleAssistanceRepository;\\n\\nimport org.springframework.beans.factory.annotation.Autowired;\\nimport org.springframework.core.ParameterizedTypeReference;\\nimport org.springframework.http.HttpEntity;\\nimport org.springframework.http.HttpMethod;\\nimport org.springframework.http.HttpRequest;\\nimport org.springframework.http.ResponseEntity;\\nimport org.springframework.web.bind.annotation.PostMapping;\\nimport org.springframework.web.bind.annotation.RequestBody;\\nimport org.springframework.web.bind.annotation.RestController;\\nimport org.springframework.web.client.RestTemplate;\\n\\n\\nimport java.net.URI;\\nimport java.util.List;\\n\\n@RestController\\npublic class VehicleAssistanceController {\\n    @Autowired\\n    VehicleAssistanceRepository repo;\\n\\n    @Autowired\\n    LocationRepository locationRepo;\\n\\n    @PostMapping(\\\"/assistance\\\")\\n    public ResponseEntity<Response> assistance(@RequestBody VehicleAssistance vehicleAssistance) {\\n        repo.save(vehicleAssistance);\\n        String destinations=getDestinations();\\n        String[] destinationsArray = destinations.split(\\\"\\\\\\\\|\\\");\\n        String url=\\\"https://maps.googleapis.com/maps/api/distancematrix/json?origins=\\\"+vehicleAssistance.getLatitude()+\\\",\\\"+vehicleAssistance.getLongitude()+\\\"&destinations=\\\"+destinations+\\\"&key=AIzaSyCZ3HmfqlU6amTFGJ7oqIjdG5rp0d1P1ks\\\";\\n        RestTemplate template = new RestTemplate();\\n        ResponseEntity<DistanceMatrix> result = template.exchange(url, HttpMethod.GET, HttpEntity.EMPTY, new ParameterizedTypeReference<DistanceMatrix>() {\\n        });\\n        List<Element> elements = result.getBody().getRows().get(0).getElements();\\n        int value=elements.get(0).getDistance().getValue();\\n        int index=0;\\n        Element leastDistanceElement=null;\\n        for(int i=0;i<elements.size();i++){\\n            int tempValue=elements.get(i).getDistance().getValue();\\n            if(tempValue<=value){\\n                value=tempValue;\\n                leastDistanceElement=elements.get(i);\\n                index=i;\\n            }\\n        }\\n        String location=destinationsArray[index];\\n        String[] locationArray=location.split(\\\",\\\");\\n        Location location1=locationRepo.findByLatitudeAndLongitude(locationArray[0],locationArray[1]);\\n        System.out.println(result.getBody().getRows());\\n        Response response = new Response(\\n                \\n                \\n                \\\"Assistance has been requested for the vehicle number: \\\" + vehicleAssistance.getVehicleNumber() + \\\".\\\"+location1.getName()+\\\" will reach you within \\\"+leastDistanceElement.getDuration().getText()+\\\". You can reach out to him at \\\"+location1.getContact()+\\\".\\\");\\n        return ResponseEntity.ok(response);\\n    }\\n\\n    public String getDestinations(){\\n        String destinations=\\\"\\\";\\n        List<Location> locations= locationRepo.findAll();\\n        for(Location location:locations){\\n\\n            destinations+=location.getLatitude()+\\\",\\\"+location.getLongitude()+\\\"|\\\";\\n        }\\n        return destinations;\\n    }\\n}\"",
+                            "id": 254
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 165,
+                    "Prompt": "add cors configuration to allow https://localhost :4200 and allow types of requests GET, POST, PUT, DELETE",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 225
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend.config;\\n\\nimport org.springframework.context.annotation.Configuration;\\nimport org.springframework.web.servlet.config.annotation.CorsRegistry;\\nimport org.springframework.web.servlet.config.annotation.WebMvcConfigurer;\\n\\n@Configuration\\npublic class CorsConfig implements WebMvcConfigurer {\\n\\n    @Override\\n    public void addCorsMappings(CorsRegistry registry) {\\n        registry.addMapping(\\\"/**\\\")\\n                .allowedOrigins(\\\"http://localhost:4200\\\") // Replace with your frontend URL\\n                .allowedMethods(\\\"GET\\\", \\\"POST\\\", \\\"PUT\\\", \\\"DELETE\\\")\\n                .allowCredentials(true);\\n    }\\n}\\n\"",
+                            "id": 255
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 166,
+                    "Prompt": "𝐅𝐫𝐨𝐧𝐭𝐞𝐧𝐝 : \nHow to pop up a component.\n",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 226
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { Component,OnInit } from '@angular/core';\\nimport { MatDialog } from '@angular/material/dialog';\\nimport { PoUpComponent } from '../po-up/po-up.component';\\n\\n\\n\\n@Component({\\n  selector: 'app-dashboard',\\n  templateUrl: './dashboard.component.html',\\n  styleUrls: ['./dashboard.component.css']\\n})\\nexport class DashboardComponent  {\\n\\n  \\n  constructor(private dialogRef: MatDialog) {}\\n\\n\\n  \\n\\n\\n  openModel(){\\n    this.dialogRef.open(PoUpComponent,{\\n      width:'100%',\\n      height:'50%',\\n      position:{\\n        top:'40%',\\n        left:'10%'\\n      }\\n    });\\n    \\n  }\\n\\n\\n  \\n  }\\n\\n\"",
+                            "id": 256
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 167,
+                    "Prompt": "fetch String from image with the help of API URL:- https://vision.googleapis.com/v1/images:annotate? key=AIzaSyBCtIJLZHZQH1DX9yLUs04kdYjonVfYvs",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 227
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { HttpClient } from '@angular/common/http';\\nimport { Component } from '@angular/core';\\nimport { Router } from '@angular/router';\\nimport { WebcamImage } from 'ngx-webcam';\\nimport { Observable, Subject } from 'rxjs';\\n\\n@Component({\\n  selector: 'app-claim',\\n  templateUrl: './claim.component.html',\\n  styleUrls: ['./claim.component.css']\\n})\\nexport class ClaimComponent {\\n\\n  constructor(private http:HttpClient, private router:Router){}\\n  trigger:Subject<void> = new Subject();\\n  previewImage:String='';\\n  text:String='';\\n  msg:String=''\\n\\n  \\n\\n  get $trigger(): Observable<void> {\\n    return this.trigger.asObservable();\\n  }\\n\\n  snapshot(event: WebcamImage) {\\n\\n    console.log(event);\\n    this.previewImage = event.imageAsDataUrl;\\n    const requestBody = {\\n    requests: [\\n      {\\n        image: {\\n          content: this.previewImage.split(',')[1],\\n        },\\n        features: [\\n          {\\n            type: 'TEXT_DETECTION',\\n          },\\n        ],\\n      },\\n    ],\\n  };\\n\\n  this.http.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBCtIJLzHzQH1tDX9yLUs04kdYjonVfYvs',requestBody).subscribe((resultData:any)=>\\n  {\\n    console.log(resultData);\\n    this.text=resultData.responses[0].fullTextAnnotation.text;\\n    console.log(this.text);\\n  });\\n  //this.text=response.data.responses[0].textAnnotations[0].description;\\n  localStorage.setItem('capturedImage', event.imageAsDataUrl);\\n  }\\n\\nAccess(){\\n  navigator.mediaDevices.getUserMedia({\\n    video:{\\n      width:500,\\n      height:500 \\n    }\\n  }).then(()=>{\\n    \\n  }).catch(err=>{\\n    console.log(err)\\n  })\\n}\\n\\nCapture(){\\n  this.trigger.next();\\n}\\n\\nproceed() {\\n  this.http.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBCtIJLzHzQH1tDX9yLUs04kdYjonVfYvs',this.text).subscribe((resultData:any)=>\\n  {\\n    alert(resultData);\\n    this.router.navigate([`/Dashboard`]);\\n  });\\n}\\n}\"",
+                            "id": 257
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 168,
+                    "Prompt": "Find the location longitude and latitude with navigation in my project.",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 228
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"import { Component, OnInit, Inject } from '@angular/core';\\nimport { MatDialogRef } from '@angular/material/dialog';\\nimport { HttpClient } from '@angular/common/http';\\n\\n@Component({\\n  selector: 'app-po-up',\\n  templateUrl: './po-up.component.html',\\n  styleUrls: ['./po-up.component.css']\\n})\\nexport class PoUpComponent implements OnInit {\\n\\n  latitude: number=0;\\n  longitude: number=0;\\n  address: string='';\\n  name:String='';\\n  phone:String='';\\n\\n\\n\\n  constructor( private ref:MatDialogRef<PoUpComponent>,private http: HttpClient){}\\n\\n  data(){\\n    \\n    let adddata={\\n      \\\"name\\\":this.name,\\n      \\\"phone\\\":this.phone,\\n      \\\"latitude\\\":this.latitude,\\n      \\\"longitude\\\":this.longitude\\n    };\\n    this.http.post('',adddata);\\n    alert('Mohit will reach you local in 30 minutes');\\n  }\\n\\n\\n  submit(){\\n    this.data();\\n    this.ref.close();\\n  }\\n\\n  ngOnInit(): void {\\n    this.getLocation();\\n\\n  }\\n\\n  getLocation() {\\n    if ('geolocation' in navigator) {\\n      navigator.geolocation.getCurrentPosition((position: GeolocationPosition) => {\\n        this.latitude = position.coords.latitude;\\n        this.longitude = position.coords.longitude;\\n        console.log(this.latitude, this.longitude);\\n      });\\n    } else {\\n      console.log('Geolocation is not available in this browser.');\\n    }\\n\\n   }\\n}\\n\"",
+                            "id": 258
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 169,
+                    "Prompt": "Create a Html page with a div tag and inside that one h2 headling name Metlife insurance and another div tag with two buttons",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 229
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"\\n\\n<div class=\\\"black-body\\\">\\n    <h2>METLIFE INSURANCE</h2>\\n\\n    <div class=\\\"buttons-container\\\">\\n        <button type=\\\"submit\\\" routerLink=\\\"./claim\\\" class=\\\"button-arounder\\\">Claim</button>       \\n        <button type=\\\"button\\\" (click)=\\\"openModel()\\\" class=\\\"button-arounder\\\">Request Aid</button>      \\n      </div>\\n  </div>\\n\"",
+                            "id": 259
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 170,
+                    "Prompt": "𝗕𝘂𝗶𝗹𝗱 𝗣𝗵𝗮𝘀𝗲 : \nGive me the commands to build the application.",
+                    "PromptType": "text",
+                    "lang": "javascript",
+                    "PromptDesc": [
+                        {
+                            "desc": "Tu build a maven project you can use the following command in the terminal.",
+                            "id": 230
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"mvn clean install\"",
+                            "id": 260
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 171,
+                    "Prompt": "Build command to build the application",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 231
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"To build an Angular application, you can use the ng build command. This command will build the application and output the compiled files to the dist/directory. Here's an example of how to use the command:\\nng build\\nYou can also specify additional options with the command, such as the -- prod flag to build the application for production:\\nng build --prod\\n\"",
+                            "id": 261
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 172,
+                    "Prompt": "𝗧𝗲𝘀𝘁 𝗖𝗮𝘀𝗲𝘀 :\nProvide me the test cases for selected method with all the imports statement.",
+                    "PromptType": "text",
+                    "lang": "java",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 232
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"package com.cg.insuranceappbackend;\\n\\nimport org.junit.jupiter.api.Test;\\nimport org.springframework.boot.test.context.SpringBootTest;\\n\\n@SpringBootTest\\nclass InsuranceAppBackendApplicationTests {\\n\\n\\t@Test\\n\\tvoid contextLoads() {\\n\\t}\\n\\n}\"",
+                            "id": 262
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 173,
+                    "Prompt": "𝗥𝗲𝗹𝗲𝗮𝘀𝗲 𝗮𝗻𝗱 𝗗𝗲𝗽𝗹𝗼𝘆𝗺𝗲𝗻𝘁 𝗣𝗵𝗮𝘀𝗲 :\nRelease script deploying this application in Azure Service.",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 233
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"apiVersion: apps/v1\\nntI\\nkind: Deployment metadata:\\nname: your-deployment-name\\nspec:\\nreplicas: 1\\nselector:\\nmatchLabels:\\napp: your-app-name\\nmetadata:\\nlabels:\\napp: your-app-name\\ntemplate:\\nspec:\\ncontainers:\\n- name: your-container-name\\nimage: your-image-name\\nports:\\ncontainerPort: 8080\"",
+                            "id": 263
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "articleId": 1442,
+            "articleName": "Application Modernization(COBOL to C# .NET conversion)\n\n",
+            "createdDate": "2024-12-11T04:56:30.305Z",
+            "category_id": 7,
+            "sub_category_id": 16,
+            "tech_id": null,
+            "is_approved": 1,
+            "category_name": "END TO END USECASES",
+            "sub_category_name": "END TO END USECASE",
+            "tech_name": null,
+            "video_url": "https://genaiexperiencestorage.blob.core.windows.net/prompt-lib/Software%20Modernization(COBOL%20to%20C%20NET).mp4?sv=2024-08-04&st=2025-02-27T13%3A56%3A10Z&se=2025-08-26T13%3A56%3A10Z&sr=b&sp=r&sig=PdmK2Fmx8QGY54QDga1J%2BtqC7EOdqILOLZBP8Piu3Mw%3D",
+            "video_id": 1409,
+            "image_url": null,
+            "image_id": null,
+            "document_url": null,
+            "document_id": null,
+            "is_private": false,
+            "repository_name": null,
+            "instruction": null,
+            "prompts": [
+                {
+                    "PromptId": 141,
+                    "Prompt": "      IDENTIFICATION DIVISION.\n      PROGRAM-ID. CUSTOMER-REPORT.\n      AUTHOR. MAHY.\n      DATE-WRITTEN. 07/21/19.\n      REMARKS. INITIAL VERSION.\n\n      ENVIRONMENT DIVISION.\n      CONFIGURATION SECTION.\n      SOURCE-COMPUTER. IBM-3090.\n      OBJECT-COMPUTER. IBM-3090.\n\n      INPUT-OUTPUT SECTION.\n\n      FILE-CONTROL.\n          SELECT CUST-IN-FILE\n              ASSIGN TO \"CUSTIN\"\n              ORGANIZATION IS SEQUENTIAL\n              ACCESS MODE IS SEQUENTIAL\n              FILE STATUS IS WW-STATUS.\n\n          SELECT CUST-OUT-RPT\n              ASSIGN TO \"CUSTOUT\"\n              ORGANIZATION IS SEQUENTIAL\n              ACCESS MODE IS SEQUENTIAL\n              FILE STATUS IS WW-STATUS.\n\n      DATA DIVISION.\n      FILE SECTION.\n\n      FD CUST-IN-FILE.\n      01 CUST-IN-REC.\n         05 CUSTOMER-ID            PIC X(10).\n         05 CUSTOMER-NAME          PIC X(30).\n         05 CUSTOMER-BALANCE       PIC 9(10)V99.\n\n      FD CUST-OUT-RPT.\n      01 CUST-OUT-REC.\n         05 REPORT-LINE            PIC X(80).\n\n      WORKING-STORAGE SECTION.\n      01 WW-STATUS                 PIC XX.\n      01 REPORT-DATA.\n         05 WS-CUSTOMER-ID         PIC X(10).\n         05 WS-CUSTOMER-NAME       PIC X(30).\n         05 WS-CUSTOMER-BALANCE    PIC 9(10)V99.\n         05 WS-REPORT-LINE         PIC X(80).\n\n      PROCEDURE DIVISION.\n      1000-MAIN-PROCESS.\n          OPEN INPUT CUST-IN-FILE\n          OPEN OUTPUT CUST-OUT-RPT\n\n          PERFORM UNTIL EOF-REACHED\n              READ CUST-IN-FILE\n                  INTO CUST-IN-REC\n                  AT END\n                      MOVE \"Y\" TO EOF-REACHED\n              NOT AT END\n                  MOVE CUSTOMER-ID TO WS-CUSTOMER-ID\n                  MOVE CUSTOMER-NAME TO WS-CUSTOMER-NAME\n                  MOVE CUSTOMER-BALANCE TO WS-CUSTOMER-BALANCE\n                  STRING\n                      \"Customer ID: \" WS-CUSTOMER-ID\n                      \", Name: \" WS-CUSTOMER-NAME\n                      \", Balance: $\" WS-CUSTOMER-BALANCE\n                      DELIMITED BY SIZE\n                      INTO WS-REPORT-LINE\n                  MOVE WS-REPORT-LINE TO CUST-OUT-REC\n                  WRITE CUST-OUT-REC\n          END-PERFORM\n\n          CLOSE CUST-IN-FILE\n          CLOSE CUST-OUT-RPT\n          STOP RUN.\n\n      END PROGRAM CUSTOMER-REPORT.\nExplain the above code and give the main business logic behind this.\n\n",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": "\n",
+                            "id": 194
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\" The provided code is written in COBOL (Common Business-Oriented Language), a language often used for business, finance, and\\nadministrative systems.\\nThe main business logic of this program is to read customer transaction records from an input file, filter out only the credit transactions, and write these credit transactions to an output file.\\nHere's a breakdown of the main sections:\\n1. Identification Division: This section provides information about the program, such as its name and version.\\n2. Environment Division: This section describes the computer environment where the program will run. It also defines the input and output files used by the program.\\n\\n3. Data Division: This section defines the data structures used in the program. It includes the structure of the input and output records, as well as other working variables.\\n4. Procedure Division: This is where the main logic of the program is written. It's divided into several sections:\\n• Initialization: Opens the input and output files and initializes some variables.\\n• Process Customer Input: Reads the input records one by one. If the transaction type is 'CR' (credit), it copies the customer number and name to the output record structure and writes it to the output file. It also keeps count of the total input records, and the number of debit and credit records.\\n• End Process: Closes the input and output files and displays the processing end time.\\nIn summary, this COBOL program is a simple batch processing application that filters credit transactions from a list of customer transactions.\\n\\n\\n\"",
+                            "id": 224
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 142,
+                    "Prompt": "I want to convert this code into C# .NET in microservice architecture with Services, Controller and Repo layers. Give me the step by step procedure to do it.\n\n",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": "\n\n",
+                            "id": 195
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Sure, here's a high-level step-by-step procedure to convert this COBOL code into a C# .NET microservice architecture:\\n1. Identify the Business Logic: Understand the business logic of the COBOL program. This program reads customer transaction records, filters out only the credit transactions, and writes these credit transactions to an output file.\\n2. Design the Microservice Architecture: Design the microservice architecture with Services, Controller, and Repository layers.\\n3. Create the Project: Create a new .NET Core Web API project in Visual Studio. This will serve as the base for your microservice.\\n4. Define the Data Model: Define the data model that represents a customer transaction. This should be a C# class with properties for each field in the COBOL record layout.\\n5. Create the Repository: Create a repository class that will handle reading from the input file and writing to the output file. This class should have methods for reading all transactions, filtering credit transactions, and writing transactions to the output File.\\n6. Create the Service: Create a service class that uses the repository to get the data, apply business rules (if any), and return the results. This class should have a method that gets all credit transactions.\\n7. Create the Controller: Create a controller class that uses the service to get the data and return it as an HTTP response. This class should have an API endpoint that returns all credit transactions.\\n8. Handle Errors: Implement error handling to ensure that your microservice can gracefully handle any errors that occur during file I/O or data processing.\\n9. Test the Microservice: Write unit tests for your service, repository, and controller classes to ensure they work as expected. Also, manually test your API endpoint using a tool like Postman.\\n10. Deploy the Microservice: Once everything is working as expected, deploy your microservice to a server or cloud platform.\\nRemember, this is a high-level procedure and the actual implementation may vary based on your specific requirements and environment.\\n\"",
+                            "id": 225
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 143,
+                    "Prompt": "Okay, now share the actual implementation to do the above procesures\n\n",
+                    "PromptType": "text",
+                    "lang": "C#",
+                    "PromptDesc": [
+                        {
+                            "desc": "Sure, let's start by creating the necessary classes and layers for our microservice.\n1. Data Model\n",
+                            "id": 196
+                        },
+                        {
+                            "desc": "2. Repository",
+                            "id": 197
+                        },
+                        {
+                            "desc": "Service ",
+                            "id": 198
+                        },
+                        {
+                            "desc": "\nController",
+                            "id": 199
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"public class Transaction\\n{\\npublic string CustomerNumber { get; set; }\\n public string CustomerName { get; set; } \\npublic string TransactionType { get; set; }\\n}\\n\\n\"",
+                            "id": 226
+                        },
+                        {
+                            "code": "\"public interface ITransactionRepository\\n{\\n}\\nIEnumerable<Transaction> GetAllTransactions(); void WriteTransaction (Transaction transaction);\\npublic class TransactionRepository: ITransactionReposository \\n{\\n// Implement methods to read from and write to fil\\n}\\n\"",
+                            "id": 227
+                        },
+                        {
+                            "code": "\"public interface ITransactionService\\n{\\n    IEnumerable<Transaction> GetCreditTransactions();\\n}\\n\\npublic class TransactionService : ITransactionService\\n{\\n    private readonly ITransactionRepository _transactionRepository;\\n\\n    public TransactionService(ITransactionRepository transactionRepository)\\n    {\\n        _transactionRepository = transactionRepository \\n            ?? throw new ArgumentNullException(nameof(transactionRepository));\\n    }\\n\\n    public IEnumerable<Transaction> GetCreditTransactions()\\n    {\\n        var transactions = _transactionRepository.GetAllTransactions();\\n        return transactions.Where(t => t.TransactionType == TransactionType.Credit);\\n    }\\n}\\n\\n\"",
+                            "id": 228
+                        },
+                        {
+                            "code": "\"[ApiController]\\n[Route(\\\"[controller]\\\")]\\npublic class TransactionController : ControllerBase\\n{\\n    private readonly ITransactionService _transactionService;\\n\\n    public TransactionController(ITransactionService transactionService)\\n    {\\n        _transactionService = transactionService \\n            ?? throw new ArgumentNullException(nameof(transactionService));\\n    }\\n\\n    [HttpGet]\\n    public IEnumerable<Transaction> Get()\\n    {\\n        return _transactionService.GetCreditTransactions();\\n    }\\n}\\n\\n\\nThis is a basic implementation and you may need to adjust it according to your specific requirements. For example, you might want to add error handling and logging, configure dependency injection for your service and repository classes, and so on.\\nAlso, remember to implement the methods in TransactionRepository to read from and write to the file. You can use the System.IO classes in .NET for file I/O.\\n\\nFinally, you can test your microservice by running it and sending a GET request to the /transaction endpoint. You should get a list of credit transactions in response.\\n\"",
+                            "id": 229
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 144,
+                    "Prompt": "Give me the logic that needs to be implemented in the TransactionRepository class which is given in the COBOL code.",
+                    "PromptType": "text",
+                    "lang": "C#",
+                    "PromptDesc": [
+                        {
+                            "desc": "The COBOL code you've provided is responsible for opening input and output files, reading from the input file, and writing to the output file.\nIn the TransactionRepository class, you'll need to implement similar logic. Here's a basic implementation:\n\n",
+                            "id": 200
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"public class TransactionRepository : ITransactionRepository\\n{\\n    private readonly string _inputFilePath;\\n    private readonly string _outputFilePath;\\n\\n    public TransactionRepository(string inputFilePath, string outputFilePath)\\n    {\\n        _inputFilePath = inputFilePath;\\n        _outputFilePath = outputFilePath;\\n    }\\n\\n    public IEnumerable<Transaction> GetAllTransactions()\\n    {\\n        var transactions = new List<Transaction>();\\n\\n        try\\n        {\\n            var lines = File.ReadLines(_inputFilePath);\\n\\n            foreach (var line in lines)\\n            {\\n                var fields = line.Split(',');\\n\\n                var transaction = new Transaction\\n                {\\n                    CustomerNumber = fields[0],\\n                    CustomerName = fields[1],\\n                    TransactionType = fields[2]\\n                };\\n\\n                transactions.Add(transaction);\\n            }\\n        }\\n        catch (IOException ex)\\n        {\\n            // Handle exception\\n        }\\n\\n        return transactions;\\n    }\\n\\n\\n    public void WriteTransaction(Transaction transaction)\\n    {\\n        if (transaction == null)\\n            throw new ArgumentNullException(nameof(transaction));\\n            \\n        if (string.IsNullOrWhiteSpace(transaction.CustomerNumber))\\n            throw new ArgumentException(\\\"Customer number cannot be null or whitespace\\\", nameof(transaction));\\n            \\n        if (string.IsNullOrWhiteSpace(transaction.CustomerName))\\n            throw new ArgumentException(\\\"Customer name cannot be null or whitespace\\\", nameof(transaction));\\n            \\n        if (string.IsNullOrWhiteSpace(transaction.TransactionType))\\n            throw new ArgumentException(\\\"Transaction type cannot be null or whitespace\\\", nameof(transaction));\\n            \\n        using (var streamWriter = new StreamWriter(_outputFilePath, true))\\n        {\\n            var transactionLine = $\\\"{transaction.CustomerNumber},{transaction.CustomerName}\\\\n\\\";\\n            streamWriter.Write(transactionLine);\\n        }\\n    }\\n}\\n\\nThis implementation assumes that the input file is a CSV file with fields for customer number, customer name, and transaction type. Adjust this as necessary based on the actual format of your input file.\\nAlso, remember to handle exceptions appropriately. The above code includes placeholders where you can add your exception handling logic.\\n\"",
+                            "id": 230
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 145,
+                    "Prompt": "Print the number of total transactions ,credit transactions , and debit transactions in the terminal.",
+                    "PromptType": "text",
+                    "lang": "C#",
+                    "PromptDesc": [
+                        {
+                            "desc": "To print the total number of transactions, as well as the number of credit and debit transactions, you can create a new method in your\nTransactionService class. This method will retrieve all transactions, filter them by type, and then print the counts. Here's how\n\n",
+                            "id": 201
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"public void PrintTransactionCounts()\\n{\\n    var transactions = _transactionRepository.GetAllTransactions();\\n    var creditTransactions = transactions.Where(t => t.TransactionType == \\\"Credit\\\");\\n    var debitTransactions = transactions.Where(t => t.TransactionType == \\\"Debit\\\");\\n\\n    Console.WriteLine($\\\"Total transactions: {transactions.Count()}\\\");\\n    Console.WriteLine($\\\"Credit transactions: {creditTransactions.Count()}\\\");\\n    Console.WriteLine($\\\"Debit transactions: {debitTransactions.Count()}\\\");\\n}\\n\\nIn this method, we first retrieve all transactions. Then we filter the\\ntransactions to get the credit and debit transactions. Finally, we print the counts to the console.\\n\\n\\n\"",
+                            "id": 231
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "articleId": 1443,
+            "articleName": "Inventory MANAGEMENT SYSTEM  \n",
+            "createdDate": "2024-12-11T05:41:34.245Z",
+            "category_id": 7,
+            "sub_category_id": 16,
+            "tech_id": null,
+            "is_approved": 1,
+            "category_name": "END TO END USECASES",
+            "sub_category_name": "END TO END USECASE",
+            "tech_name": null,
+            "video_url": "https://genaiexperiencestorage.blob.core.windows.net/prompt-lib/Inventory%20Management%20Check.mp4?sv=2024-08-04&st=2025-02-27T13%3A56%3A10Z&se=2025-08-26T13%3A56%3A10Z&sr=b&sp=r&sig=E%2BfT7zOIOYt6zWIXHOk6JEKHY3zlgw%2FsM7GO%2FNHROEU%3D",
+            "video_id": 1410,
+            "image_url": null,
+            "image_id": null,
+            "document_url": null,
+            "document_id": null,
+            "is_private": false,
+            "repository_name": null,
+            "instruction": null,
+            "prompts": [
+                {
+                    "PromptId": 146,
+                    "Prompt": "Give me requirement document for following use case: We have an aircraft inventory dashboard in which upon selecting plane number you get all the details of plane like plane name, total nnumber of engines, aircraft launch date, retire date, service year, plane type and its capacity. Now if you have select particular engine number of the plane you will get information about plane parts its health, description etc. so as we know every year approx 800 aircraft are retireec but their parts may be in good condition so by tracking it we can utilise it in other aircraft. Tech stack of application is angular for frontend, spring for backend and mongodb",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 202
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Aircraft Inventory Dashboard\\nOverview\\nThe Aircraft Inventory Dashboard is a web application that allows users to view information about aircraft and their parts. The application is built using Angular for the frontend, Spring for the backend, and MongoDB for data storage.\\nUser Stories\\n• As a user, I want to be able to select a plane number and view information about the plane, including its name, total number of engines, launch date, retire date, service year, type, and capacity.\\n• As a user, I want to be able to select a particular engine number of a plane and view information about the engine, including its parts, health, and description.\\n• As a user, I want to be able to view information about retired aircraft and their parts, so that I can utilize them in other aircraft.\\nRequirements\\nFrontend\\n• The frontend of the application must be built using Angular.\\n• The frontend must allow users to select a plane number and view information about the plane, including its name, total number of engines, launch date, retire date, service year, type, and capacity.\\n• The frontend must allow users to select a particular engine number of a plane and view information about the engine, including its parts, health, and description.\\n• The frontend must allow users to view information about retired aircraft and their parts.\\nBackend\\n• The backend of the application must be built using Spring.\\n• The backend must provide APIs for retrieving information about planes and their engines.\\n• The backend must provide APIs for retrieving information about retired aircraft and their parts.\\nDatabase\\n• The application must use MongoDB for data storage.\\nThe database must contain information about planes, engines, and retired aircraft and their parts.\\nFuture Enhancements\\n• Allow users to search for planes and engines by various criteria, such as name, type, and capacity.\\n• Allow users to view information about the maintenance history of planes and their engines.\\n• Allow users to view information about the availability of retired aircraft parts.\\n\\n\"",
+                            "id": 232
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 147,
+                    "Prompt": "We have an aircraft inventory dashboard in which upon selecting plane number you get all the details of plane like plane name, total number of engines, aircraft launch date, retire date, service year, plane type and its capacity. Now if you have select particular engine number of the plane you will get information about plane parts its id, part name, health, description, status and cost. I want to use Mongo db for the same. Give me DB scheema and ER diagram for the same.",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": "Sure I can help u with that . here is the possib schema for your Mongidb database .",
+                            "id": 203
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Planes Collection\\n\\n_id: ObjectId\\nplaneNumber: String\\nplaneName: String\\ntotalEngines: Number\\nlaunchDate: Date\\nretireDate: Date\\nserviceYear: Number\\nplaneType: String\\ncapacity: Number\\nengines: Array of objects containing:\\nengineNumber: String\\nparts: Array of objects containing:\\npartId: String\\npartName: String\\nhealth: Number\\ndescription: String\\nstatus: String\\ncost: Number\"",
+                            "id": 233
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 148,
+                    "Prompt": "give me a h1 tag inside div",
+                    "PromptType": "text",
+                    "lang": "markup",
+                    "PromptDesc": [
+                        {
+                            "desc": "You can add a div element with an h1 tag inside it as follows:",
+                            "id": 204
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"<div>\\n<h1>Your Heading Here</h1>\\n</div>\\nYou can replace \\\"Your Heading Here\\\" with the text you want to display.\\n\"",
+                            "id": 234
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 149,
+                    "Prompt": "now give me a drop downbar",
+                    "PromptType": "text",
+                    "lang": "markup",
+                    "PromptDesc": [
+                        {
+                            "desc": "You can add a dropdown menu in HTML using the select tag and option tags for the items in the dropdown. Here's an\nexample:\n",
+                            "id": 205
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"<div>\\n<h1>Your Heading Here</h1>\\n<select>\\n<option value=\\\"option1\\\">Option 1</option>\\n<option\\nvalue=\\\"option2\\\">Option 2</option> <option value=\\\"option3\\\">Option 3</option> </select>\\n</div>\\n\\n\\nYou can replace \\\"Option 1\\\", \\\"Option 2\\\", and \\\"Option 3\\\" with the options you want to display in the dropdown.\\n\"",
+                            "id": 235
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 150,
+                    "Prompt": "Now Give me  a Table ",
+                    "PromptType": "text",
+                    "lang": "markup",
+                    "PromptDesc": [
+                        {
+                            "desc": "You can add a table in HTML using the table tag, tr tags for the rows, and td tags for the data in the rows. Here's an example:\n\n",
+                            "id": 206
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"<div>\\n  <h1>Your Heading Here</h1>\\n  <select>\\n    <option selected>Select plane</option>\\n    <!-- Add more options below as needed -->\\n    <option>Plane 1</option>\\n    <option>Plane 2</option>\\n  </select>\\n  <table class=\\\"table\\\">\\n    <thead>\\n      <tr>\\n        <th>Column 1</th>\\n        <th>Column 2</th>\\n        <th>Column 3</th>\\n      </tr>\\n    </thead>\\n    <tbody>\\n      <tr>\\n        <td>Data 1</td>\\n        <td>Data 2</td>\\n        <td>Data 3</td>\\n      </tr>\\n      <!-- Add more rows below as needed -->\\n      <tr>\\n        <td>Data 4</td>\\n        <td>Data 5</td>\\n        <td>Data 6</td>\\n      </tr>\\n    </tbody>\\n  </table>\\n</div>\\n\\n\\nYou can replace \\\"Column 1\\\", \\\"Column 2\\\", \\\"Column 3\\\", and the data cells with the\\ncontent you want to display in the table. The table rows and data will likely be generated dynamically by Angular.\\n\\n\"",
+                            "id": 236
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 151,
+                    "Prompt": "Give me  a p table of prime ng",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": " Sure, here is an example of a PrimeNG p-table in Angular:",
+                            "id": 207
+                        },
+                        {
+                            "desc": "In your TypeScript File you should have something like this :",
+                            "id": 208
+                        },
+                        {
+                            "desc": "Please make sure to import the PrimeNG TableModule in your module file:",
+                            "id": 209
+                        },
+                        {
+                            "desc": "Remember to install PrimeNG and its dependencies if you\nhaven't done so:\n\n",
+                            "id": 210
+                        },
+                        {
+                            "desc": "And include the PrimeNG CSS in your styles.css:",
+                            "id": 211
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"<p-table [value]=\\\"products\\\">\\n<ng-template pTemplate=\\\"header\\\">\\n<tr>\\n<th>ID</th>\\n<th>Name</th>\\n<th>Price</th>\\n</tr>\\n</ng-template>\\n<ng-template pTemplate=\\\"body\\\" let-product>\\n<tr>\\n<td>{{product.id}}</td> <td>{{product.name}}</td>\\n<td>{{product.price}}</td>\\n</tr>\\n</ng-template>\\n</p-table>\\n\"",
+                            "id": 237
+                        },
+                        {
+                            "code": "\"import { Component } from '@angular/core';\\n\\ninterface Product {\\n  id: number;\\n  name: string;\\n  price: number;\\n}\\n\\n@Component({\\n  selector: 'app-root',\\n  templateUrl: './app.component.html',\\n  styleUrls: ['./app.component.css'],\\n})\\nexport class AppComponent {\\n  products: Product[];\\n\\n  constructor() {\\n    this.products = [\\n      { id: 1, name: 'Product 1', price: 100 },\\n      { id: 2, name: 'Product 2', price: 200 },\\n      { id: 3, name: 'Product 3', price: 300 },\\n      // Add more products as needed\\n    ];\\n  }\\n}\\n\\n\"",
+                            "id": 238
+                        },
+                        {
+                            "code": "\"import {TableModule } from 'primeng/table';\\n@NgModule({ imports: [\\n})\\n],\\n// other imports here\\nTableModule\\n// declarations, providers, etc. here\\nexport class AppModule { }\\n\"",
+                            "id": 239
+                        },
+                        {
+                            "code": "\"npm install primeng primeicons\"",
+                            "id": 240
+                        },
+                        {
+                            "code": "\"@import\\n@import\\n'~primeng/resources/themes/nova-light/ '~primeng/resources/primeng.min.css';\\n@import '~primeicons/primeicons.css';\\nNext steps:\\n1. Check if the PrimeNG table is displaying correctly.\\n2. Customize the table according to your needs.\\n3. Implement any additional functionality required for your project.\\n\"",
+                            "id": 241
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 152,
+                    "Prompt": "Insert the filetring in this process ",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": "Sure, you can add filtering to your PrimeNG table by using the pColumnFilter directive. Here's how you can modify your table to include filtering:\n\n",
+                            "id": 212
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"<p-table [value]=\\\"products\\\">\\nProperty 'products' does not exist on type 'D\\n<ng-template pTemplate=\\\"header\\\">\\n<tr>\\n<th>\\nID\\n<p-columnFilter type=\\\"text\\\" field=\\\"id\\\"></p-columnFilter> I\\n</th>\\n<th>\\nName\\n<p-columnFilter type=\\\"text\\\" field=\\\"name\\\"></p-columnFilter>\\n</th>\\n<th>\\nPrice\\n<p-columnFilter type=\\\"text\\\" field=\\\"price\\\"></p-columnFilter>\\n</th>\\n</tr>\\n</ng-template>\\n<ng-template pTemplate=\\\"body\\\" let-product>\\n<tr>\\n<td>{{product.id}}</td>\\n<td>{{product.name}}</td>\\n<td>{{product.price}}</td>\\n</tr> </ng-template>\\n</p-table>\\n</div>\\n</div>\\n\"",
+                            "id": 242
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 153,
+                    "Prompt": "Give me the command to build Angular project ",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 213
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"To build an Angular project, you can use the Angular CLI's build command. Here is the command:\\nng build --prod\\nThis command will create a dist/ directory in your\\nproject's root directory. The --prod flag is for a production build, which includes optimizations like minification and dead code elimination\\n\"",
+                            "id": 243
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 154,
+                    "Prompt": "Give me yaml file configuration to deploy this particular application on azure cloud\n\n",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": "To deploy this Angular application on Azure Cloud, you can use Azure App Service. Here is a sample YAML configuration file that you can use to deploy your application:\n# Azure Web App Service\n# Build your Angular app and deploy it to Azure Web App Service\n# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript\ntrigger:\n- main\npool:\nvmImage: ubuntu-latest\n",
+                            "id": 214
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"steps:\\n-\\ntask: NodeTool@e\\ninputs:\\nversionSpec: '14.x'\\ndisplayName: 'Install Node.js'\\nscript: |\\nnpm install -g @angular/cli\\nnpm install\\nng build --prod\\ndisplayName: 'npm install and build'\\ntask: AzureWebApp@1\\ninputs:\\nazureSubscription: '<your-subscription>'\\nappName: '<your-app-name>'\\npackage: '$(System.DefaultWorkingDirectory)/dist/<your-app-name>'\\ndeployToSlotorASE: true\\nslotName: 'production'\\n\\nYou will need to replace <your-subscription> and <your-app-name> with your own Azure subscription and app name. Also, make sure to update the package path to match the output directory of your Angular build.\\n\\n\"",
+                            "id": 244
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 155,
+                    "Prompt": "Also give me prompt for deployment ",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 215
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"Sure! Here are the steps to deploy an Angular application to Azure using the Azure CLI:\\n1. Install the Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli\\n2. Open a terminal and log in to your Azure account using the following command:\\naz login\\nI\\n3. Navigate to your Angular project directory and build the project using the following command:\\nng build –prod\\n\\n\\n4. Create an Azure App Service using the following command:\\name> --resource-group <resource-group-name> --plan <app-service-plan-name> --runtime \\\"NODE | 14-1ts\\\"\\nReplace <app-name>, <resource-group-name>, and <app-service-plan-name> with your own values.\\n5. Deploy the Angular app to the Azure App Service using the following command:\\nurce config-zip --name <app-name> --resource-group <resource-group-name> --src dist/<app-name>.zip\\nReplace <app-name> and <resource-group-name> with your own values. Also, make sure to update the src path to match the output directory of your Angular build.\\n6. Finally, browse to your deployed Angular app using the following command:\\naz webapp browse --name <app-name> --resource-group <resource-group-name>\\nReplace <app-name> and <resource-group-name> with your own values.\\nThat's it! Your Angular app should now be deployed to Azure.\\n\"",
+                            "id": 245
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 156,
+                    "Prompt": "generate the documentation of the selected code",
+                    "PromptType": "text",
+                    "lang": "plaintext",
+                    "PromptDesc": [
+                        {
+                            "desc": " ",
+                            "id": 216
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"This HTML code is part of an Angular application. It appears to be a dashboard for managing information about airplanes and their engines. Here's a breakdown of the main components:\\n1.\\tBootstrap CSS Link: The document starts with a link to the Bootstrap CSS library, which is used for styling the page.\\n2.\\t\\n2. Header: The header contains a title for the page.\\n3. Airplane Selection: There's a dropdown menu for selecting an airplane by its number. The getValue($event) function is called whenever the selection changes.\\n\\n4. Airplane Information Table: This table displays various details about the selected airplane, such as its name, number, engine quantity, launch date, retire date, service years, plane type,\\ncapacity, and status. The data for the table is populated using the *ngFor directive to iterate over the Engines array.\\n\\n5. Engine Button: There's a button labeled\\n\\\"ENG125\\\" that, when clicked, calls the engines() function. This button only appears if the flag variable is true.\\n6. Engine Information Table: This table displays details about the engine of the selected airplane, such as the plane number, engine part name, description, cost, health, and status. The data for the table is populated using the *ngFor directive to iterate over the Engine array. This table only appears if the flag1 variable is true.\\n7. Scripts: The document ends with scripts for jQuery, Popper.js, and Bootstrap. These are used for various interactive features and Bootstrap's JavaScript components.\\nPlease note that the actual functionality of the page (like what the getValue($event) and engines() functions do) would be defined in the corresponding TypeScript file.\\n\\n\\n\"",
+                            "id": 246
+                        }
+                    ]
+                },
+                {
+                    "PromptId": 157,
+                    "Prompt": "optimize the selected code",
+                    "PromptType": "text",
+                    "lang": "typescript",
+                    "PromptDesc": [
+                        {
+                            "desc": "Here's an optimized version of your selected code. I've removed the unnecessary console logs and added error handling for the HTTP request.\n\n",
+                            "id": 217
+                        }
+                    ],
+                    "Code": [
+                        {
+                            "code": "\"this.http.get('http://localhost:8089/api/aircraft/allPlaneNumber').subscribe(\\n  (resultData: any) => {\\n    this.planeNumber = resultData; \\n    this.Name.push(this.planeNumber);\\n  },\\n  (error) => {\\n    console.error('Error:', error);\\n  }\\n);\\nIn this version, the HTTP request is made and the result is stored in this.planeNumber. The result is then pushed into the this. Name array. If there's an error with the request, it's logged to the console.\"",
+                            "id": 247
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
